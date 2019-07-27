@@ -347,9 +347,9 @@
             this.label13.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(30, 55);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(132, 15);
+            this.label13.Size = new System.Drawing.Size(94, 15);
             this.label13.TabIndex = 8;
-            this.label13.Text = "Nombre / Razón social";
+            this.label13.Text = "Nombre Cliente";
             // 
             // txtNombreCliente
             // 
@@ -366,9 +366,9 @@
             this.label12.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(31, 13);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 15);
+            this.label12.Size = new System.Drawing.Size(47, 15);
             this.label12.TabIndex = 6;
-            this.label12.Text = "Operativo";
+            this.label12.Text = "Código";
             // 
             // btnBuscarCliente
             // 
