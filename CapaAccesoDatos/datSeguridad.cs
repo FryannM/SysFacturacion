@@ -50,7 +50,7 @@ namespace CapaAccesoDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spBuscarUsuario", cn);
+                cmd = new SqlCommand("[spBuscarUsuario_new]", cn);
                 cmd.Parameters.AddWithValue("@prmBusqueda", por);
                 cmd.Parameters.AddWithValue("@prmValor", valor);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -81,9 +81,9 @@ namespace CapaAccesoDatos
                     u.sucursal = s;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally { cmd.Connection.Close(); }
             return u;
