@@ -471,9 +471,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(6, 320);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(42, 15);
+            this.label15.Size = new System.Drawing.Size(43, 15);
             this.label15.TabIndex = 14;
-            this.label15.Text = "Soles:";
+            this.label15.Text = "Pesos";
             // 
             // groupBox3
             // 

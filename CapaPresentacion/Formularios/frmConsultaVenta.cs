@@ -90,14 +90,14 @@ namespace CapaPresentacion
 
                     }
                 }
-                lblTotal.Text =string.Format("S/ ")+ total.ToString("0.00"); lblBoleta.Text = boleta.ToString("0.00"); lblFactura.Text = factura.ToString("0.00");
+                lblTotal.Text =string.Format("RD/ ")+ total.ToString("0.00"); lblBoleta.Text = boleta.ToString("0.00"); lblFactura.Text = factura.ToString("0.00");
                 lblNotaventa.Text =notaventa.ToString("0.00");lblEfectivo.Text = efectivo.ToString("0.00");lblTarjetacredito.Text = tarjetacred.ToString("0.00");
-                lblContrarembolso.Text = contrareembolso.ToString("0.00");lbldeposito.Text = deposito.ToString("0.00");lblsoles.Text ="S/ "+ total.ToString("0.00");lbldolares.Text = "$ " + dolares.ToString("0.00");
+                lblContrarembolso.Text = contrareembolso.ToString("0.00");lbldeposito.Text = deposito.ToString("0.00");lblsoles.Text ="RD/ "+ total.ToString("0.00");lbldolares.Text = "$ " + dolares.ToString("0.00");
                 lbldescuento.Text = descuento.ToString("0.00");
 
                 /*CÁLCULO DE UTILIDADES*/
-                lblImporteInversion.Text = "S/ " + inversion.ToString("0.00");
-                lblTotalUtilidades.Text = "S/ " + totalUtilidades.ToString("0.00");
+                lblImporteInversion.Text = "RD/ " + inversion.ToString("0.00");
+                lblTotalUtilidades.Text = "RD/ " + totalUtilidades.ToString("0.00");
             }
             catch (Exception)
             {

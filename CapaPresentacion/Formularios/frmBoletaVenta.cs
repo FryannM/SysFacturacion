@@ -512,7 +512,7 @@ namespace CapaPresentacion
                     MessageBox.Show("Se guardo de manera correcta!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvDetalleBoleta.Enabled = false; ControlBotones(true, false, false, false); btnAgregarItem.Enabled = false; btnAnular.Enabled = true;
                     ac.BloquearText(this.gbCliente, false); ac.BloquearText(this.panel1, false);
-                    lblMontoEnletras.Text ="Son: "+ ac.enletras(txtTotal.Text).ToLower()+" Soles";
+                    lblMontoEnletras.Text ="Son: "+ ac.enletras(txtTotal.Text).ToLower()+" Pesos";
                    
                 }
             }
@@ -521,6 +521,11 @@ namespace CapaPresentacion
             {
                 MessageBox.Show(ex.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void lblMontoEnletras_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
