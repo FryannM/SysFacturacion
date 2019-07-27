@@ -549,7 +549,7 @@
             this.MinimumSize = new System.Drawing.Size(650, 600);
             this.Name = "frmBoletaVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Boleta de venta";
+            this.Text = "Venta Producto";
             this.Load += new System.EventHandler(this.frmBoletaVenta_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
