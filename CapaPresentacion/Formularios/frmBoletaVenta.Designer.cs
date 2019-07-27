@@ -125,7 +125,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(164, 25);
             this.label6.TabIndex = 2;
-            this.label6.Text = "BOLETA DE VENTA";
+            this.label6.Text = "VENTA";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
@@ -144,9 +144,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(5, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 16);
+            this.label4.Size = new System.Drawing.Size(38, 16);
             this.label4.TabIndex = 0;
-            this.label4.Text = "R.U.C.";
+            this.label4.Text = "N.O.";
             // 
             // dgvDetalleBoleta
             // 
@@ -162,20 +162,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(55, 42);
+            this.label2.Location = new System.Drawing.Point(193, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(338, 25);
+            this.label2.Size = new System.Drawing.Size(167, 25);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Polarizados, Ploteos y Accesorios";
+            this.label2.Text = "Almacen Fulano";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(167, 77);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 13);
+            this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = " TRUJILLO LA LIBERTAD";
             // 
             // gbCliente
             // 
@@ -414,6 +413,7 @@
             this.lblMontoEnletras.Size = new System.Drawing.Size(297, 23);
             this.lblMontoEnletras.TabIndex = 23;
             this.lblMontoEnletras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMontoEnletras.Click += new System.EventHandler(this.lblMontoEnletras_Click);
             // 
             // btnAnular
             // 
@@ -500,11 +500,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(428, 231);
+            this.label10.Location = new System.Drawing.Point(415, 231);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 15);
+            this.label10.Size = new System.Drawing.Size(67, 15);
             this.label10.TabIndex = 10;
-            this.label10.Text = "Total S/ :";
+            this.label10.Text = "Total RD$ :";
             // 
             // txtTotal
             // 
@@ -538,7 +538,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(634, 562);
+            this.ClientSize = new System.Drawing.Size(634, 561);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gbCliente);

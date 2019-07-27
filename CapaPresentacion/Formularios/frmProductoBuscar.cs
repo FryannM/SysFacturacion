@@ -168,7 +168,7 @@ namespace CapaPresentacion
         private void btnVender_Click(object sender, EventArgs e)
         {
             try
-            {
+                {
                 //int id_prod = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
                 //List<entProducto> AgregarProdAlista = LocalBD.Instancia.ReturnDetVenta(1, id_prod, 1);
                 //frmBoletaVenta frmbv = new frmBoletaVenta(this.id_Usario);
