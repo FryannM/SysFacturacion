@@ -140,7 +140,7 @@ namespace CapaPresentacion
                                 throw new ApplicationException("Este producto ya fue agreado");  
                             }
                         }
-                        entProducto pr = negProducto.Instancia.BuscarProducto(idprod);
+                        entProducto pr = ProductoServices.Instancia.BuscarProducto(idprod);
                         pr.Cantidad_ = cantidad;
                         detBoleta.Add(pr);
                     }
@@ -179,7 +179,7 @@ namespace CapaPresentacion
                                 throw new ApplicationException("Este producto ya fue agreado");
                             }
                         }
-                        entProducto pr = negProducto.Instancia.BuscarProducto(idprod);
+                        entProducto pr = ProductoServices.Instancia.BuscarProducto(idprod);
                         pr.Cantidad_ = cantidad;
                         detNotaVenta.Add(pr);
                     }

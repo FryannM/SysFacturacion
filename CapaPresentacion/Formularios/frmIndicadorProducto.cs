@@ -68,7 +68,7 @@ namespace CapaPresentacion
             {
                 cboCategoria.ValueMember = "Id_Cat";
                 cboCategoria.DisplayMember = "Nombre_Cat";
-                cboCategoria.DataSource = negProducto.Instancia.ListarCategoria();
+                cboCategoria.DataSource = ProductoServices.Instancia.ListarCategoria();
                 // cargar estado rbstock
                 rbStock.Checked = true;
             }
@@ -94,8 +94,8 @@ namespace CapaPresentacion
                 else if (rbStcokMin.Checked == true) rango = 1;
                 else if (rbstockcero.Checked == true) rango = 0;
                 List<entProducto> Lista = null;
-                if (name == null) { Lista = negProducto.Instancia.ListarProductoIndicador(txtCodigo.Text,(int)cat , rango); }
-                else { Lista = negProducto.Instancia.BuscarprodAvanzadaIndicador(name); }
+                if (name == null) { Lista = ProductoServices.Instancia.ListarProductoIndicador(txtCodigo.Text,(int)cat , rango); }
+                else { Lista = ProductoServices.Instancia.BuscarprodAvanzadaIndicador(name); }
                 for (int i = 0; i < Lista.Count; i++)
                 {
                     if (Lista[i].Stock_Prod >= 0 && Lista[i].Stock_Prod <= Lista[i].StockMin_Prod)

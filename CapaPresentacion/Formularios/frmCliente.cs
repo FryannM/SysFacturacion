@@ -73,7 +73,7 @@ namespace CapaPresentacion
             try
             { int num = 0;
                 dgvCliente.Rows.Clear();
-                List<entCliente> Lista = negCliente.Intancia.ListarCliente();
+                List<entCliente> Lista = ClienteServices.Intancia.ListarCliente();
                 for (int i = 0; i < Lista.Count; i++) {
                     num++;
                     String[] fila = new String[] {Lista[i].Id_Cliente.ToString(),num.ToString(),Lista[i].Nombre_Cliente,
@@ -171,7 +171,7 @@ namespace CapaPresentacion
                 c.tipodocumento = td;
                 DialogResult i = MessageBox.Show("¿Desea eliminar registro seleccionado?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(i == DialogResult.Yes) {
-                    int result = negCliente.Intancia.MantenimientoCliente(c, 3);
+                    int result = ClienteServices.Intancia.MantenimientoCliente(c, 3);
                     MessageBox.Show("Registro eliminado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LlenarGrid();
                 }
@@ -194,7 +194,7 @@ namespace CapaPresentacion
             {
                 entCliente c = new entCliente();
                 String Nro_doc = txtNroDoc.Text;
-                c = negCliente.Intancia.BuscarCliente(0, Nro_doc);
+                c = ClienteServices.Intancia.BuscarCliente(0, Nro_doc);
                 dgvCliente.Rows.Clear();
                 String[] fila = new String[] {c.Id_Cliente.ToString(),1.ToString(),c.Nombre_Cliente,
                     c.tipodocumento.Nombre_TipDoc,c.NumeroDoc_Cliente,c.Telefono_Cliente,c.Celular_Cliente,
@@ -216,7 +216,7 @@ namespace CapaPresentacion
                 dgvCliente.Rows.Clear();
                 int num = 0;
                 String Nom_cli = txtNomRazSocial.Text;
-                List<entCliente> Lista = negCliente.Intancia.BuscarClienteAvanzada(Nom_cli);
+                List<entCliente> Lista = ClienteServices.Intancia.BuscarClienteAvanzada(Nom_cli);
                 for (int i = 0; i < Lista.Count; i++)
                 {
                     num++;

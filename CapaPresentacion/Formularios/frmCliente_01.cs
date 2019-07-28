@@ -28,7 +28,7 @@ namespace CapaPresentacion
                 if (IdCliente != 0)
                 {
                     entCliente c = new entCliente();
-                    c = negCliente.Intancia.BuscarCliente(IdCliente, 0.ToString());
+                    c = ClienteServices.Intancia.BuscarCliente(IdCliente, 0.ToString());
                     cboTipDoc.SelectedValue = c.tipodocumento.Id_TipDoc;
                     txtNumDoc.Text = c.NumeroDoc_Cliente;
                     txtNombre.Text = c.Nombre_Cliente;
@@ -85,7 +85,7 @@ namespace CapaPresentacion
                 c.Direccion_Cliente = txtDireccion.Text;
                 c.UsuarioCreacion_Cliente = IdUsuario;
                 c.UsuarioUpdate_Cliente = IdUsuario;
-                int i = negCliente.Intancia.MantenimientoCliente(c, tipoedicion);
+                int i = ClienteServices.Intancia.MantenimientoCliente(c, tipoedicion);
                 MessageBox.Show("Registro Correcto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Dispose();
                

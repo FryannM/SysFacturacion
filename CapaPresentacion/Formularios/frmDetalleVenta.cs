@@ -49,7 +49,7 @@ namespace CapaPresentacion
             double subtotal = 0.0, descuento = 0.0, igv = 0, montoigv = 0.0, total = 0.0;
             try
             {
-                v = negVenta.Intancia.VentaDetalle(this.id_venta);
+                v = VentaServices.Intancia.VentaDetalle(this.id_venta);
                 List<entDetalleVenta> det = v.detalleventa;
                 for (int i = 0; i < det.Count; i++) {
                     String[] fila = new String[] { det[i].producto.Codigo_Prod, det[i].producto.Nombre_Prod, det[i].producto.Precio_Prod.ToString("0.00"),

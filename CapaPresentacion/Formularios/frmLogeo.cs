@@ -32,7 +32,7 @@ namespace CapaPresentacion
                 String usuario = txtUsuario.Text;
                 String password = txtPassword.Text;
                 entUsuario u = null;
-                u = negSeguridad.Instancia.IngresoSisema(usuario,password);
+                u = SeguridadServices.Instancia.IngresoSisema(usuario,password);
                 frmSelectSucursal S = new frmSelectSucursal(u);
                 S.Show();
                 //frmPrincipal frmprincipal = new frmPrincipal(u);

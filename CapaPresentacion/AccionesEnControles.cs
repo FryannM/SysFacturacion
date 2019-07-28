@@ -113,7 +113,7 @@ namespace CapaPresentacion
             {
                 foreach (Control cboTippago in control.Controls) {
                     if (cboTippago.Name == "cboTipoPago") {
-                        List<entTipoPago> Lista = negVenta.Intancia.CargarTipoPago();
+                        List<entTipoPago> Lista = VentaServices.Intancia.CargarTipoPago();
                         ((ComboBox)cboTippago).ValueMember = "Id_TipPago";
                         ((ComboBox)cboTippago).DisplayMember = "Descripcion_TipPago";
                         ((ComboBox)cboTippago).DataSource = Lista;
@@ -136,7 +136,7 @@ namespace CapaPresentacion
                     {
                         if (CboMoneda.Name == "CboMoneda")
                         {
-                            List<entMoneda> Lista = negVenta.Intancia.ListarMoneda();
+                            List<entMoneda> Lista = VentaServices.Intancia.ListarMoneda();
                             ((ComboBox)CboMoneda).ValueMember = "Id_Moneda";
                             ((ComboBox)CboMoneda).DisplayMember = "Descripcion_Moneda";
                             ((ComboBox)CboMoneda).DataSource = Lista;
@@ -161,7 +161,7 @@ namespace CapaPresentacion
                     {
                         if (cboTipDoc.Name == "cboTipDoc")
                         {
-                            List<entTipoDocumento> Lista = negCliente.Intancia.ListarTipDoc();
+                            List<entTipoDocumento> Lista = ClienteServices.Intancia.ListarTipDoc();
                             ((ComboBox)cboTipDoc).ValueMember = "Id_TipDoc";
                             ((ComboBox)cboTipDoc).DisplayMember = "Abreviatura_TipDoc";
                             ((ComboBox)cboTipDoc).DataSource = Lista;

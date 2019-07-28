@@ -297,6 +297,7 @@ namespace CapaAccesoDatos
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("spGuardarVenta", cn);
+                
                 cmd.Parameters.AddWithValue("@Cadxml", cadXml);
                 cmd.Parameters.AddWithValue("@TIPO_DOC_VENTA", id_tipdocventa);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -309,6 +310,35 @@ namespace CapaAccesoDatos
                 throw;
             }
             finally { cmd.Connection.Close(); }
+        }
+
+        public  void stockLess(int cantidad, int idProducto)
+        {
+            SqlCommand cmd = null;
+            try
+            {
+                var result = 0;
+
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("sprestarStock", cn);
+                cmd.Parameters.AddWithValue("@cantidad", cantidad);
+                cmd.Parameters.AddWithValue("@idProducto", idProducto);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                result = cmd.ExecuteNonQuery();
+
+
+            }
+
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { cmd.Connection.Close(); }
+
+
+
+
         }
 
         public List<entMoneda> ListarMoneda()

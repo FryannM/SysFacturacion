@@ -213,11 +213,11 @@ namespace CapaPresentacion
         {
             try
             {
-                serie = negVenta.Intancia.CargarSerie(1, 1);
+                serie = VentaServices.Intancia.CargarSerie(1, 1);
                 ser = serie.Numero_Serie;
                 lblSerie.Text = serie.Numero_Serie + "-";
-                lblCorrelativo.Text = "Nº " + negVenta.Intancia.CargarCorrelativo(1, serie.Numero_Serie);
-                corr = negVenta.Intancia.CargarCorrelativo(1, serie.Numero_Serie);
+                lblCorrelativo.Text = "Nº " + VentaServices.Intancia.CargarCorrelativo(1, serie.Numero_Serie);
+                corr = VentaServices.Intancia.CargarCorrelativo(1, serie.Numero_Serie);
             }
             catch (Exception)
             {
@@ -237,7 +237,7 @@ namespace CapaPresentacion
                 ac.LlenarTipoPago(this.gbCliente);
                 ControlBotones(true, false, false, false); btnBuscarXid.Enabled = false;
                 //txtSubtotal.Text = 0.ToString(); txtDescuento.Text = 0.ToString(); txtTotal.Text = 0.ToString();
-                us = negSeguridad.Instancia.BuscarUsario("Id", this.id_user.ToString());
+                us = SeguridadServices.Instancia.BuscarUsario("Id", this.id_user.ToString());
                 this.id_user = us.Id_Usuario;
                 txtCodUsuario.Text = us.Codigo_Usuario;
                 CargarSerie_correlativo();
@@ -259,7 +259,7 @@ namespace CapaPresentacion
 
                 entCliente c = null;
                 String num_doc = txtNumDoc.Text;
-                c = negCliente.Intancia.BuscarCliente(0, num_doc);
+                c = ClienteServices.Intancia.BuscarCliente(0, num_doc);
                 txtNombreCliente.Text = c.Nombre_Cliente;
                 txtDireccionCliente.Text = c.Direccion_Cliente;
                 cboTipDoc.SelectedValue = c.tipodocumento.Id_TipDoc;
@@ -293,7 +293,7 @@ namespace CapaPresentacion
                 entCliente c = null;
 
                 int id_cli = LocalBD.Instancia.ReturnIdCliente(0, 0);
-                c = negCliente.Intancia.BuscarCliente(id_cli, 0.ToString());
+                c = ClienteServices.Intancia.BuscarCliente(id_cli, 0.ToString());
                 btnBuscarXid.Enabled = false; btnBuscarCliente.Enabled = true;
                 txtNombreCliente.Text = c.Nombre_Cliente;
                 txtDireccionCliente.Text = c.Direccion_Cliente;
@@ -456,12 +456,33 @@ namespace CapaPresentacion
             }
         }
 
+         private entDetalleVenta Stock()
+        {
+
+           
+            var result = new entDetalleVenta();
+            foreach (DataGridViewRow row in dgvDetalleBoleta.Rows)
+            {
+
+                result.Id_Prod_Det = Convert.ToInt32(row.Cells[0].Value);
+                result.Cantidad_Det = Convert.ToInt32(row.Cells[2].Value);
+                
+                 
+                
+            }
+
+             VentaServices.Intancia.RestarStock(result.Cantidad_Det,result.Id_Prod_Det);
+
+            return result;
+
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
                 
-                DialogResult r = MessageBox.Show("¿Desea guardar Boleta?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult r = MessageBox.Show("¿Desea Registrar la Venta?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
                 {
                     SoloNumCeldaGrid();
@@ -507,8 +528,12 @@ namespace CapaPresentacion
                     }
                     v.detalleventa = Detalle;
                     v.Desc_Venta = "";
+                    Stock();
                     CargarSerie_correlativo();
-                    int result = negVenta.Intancia.GuardarVenta(v, 1, serie.Numero_Serie);
+                    int result = VentaServices.Intancia.GuardarVenta(v, 1, serie.Numero_Serie);
+
+                     
+                      //var stock= negVenta.Equals.Resta
                     MessageBox.Show("Se guardo de manera correcta!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvDetalleBoleta.Enabled = false; ControlBotones(true, false, false, false); btnAgregarItem.Enabled = false; btnAnular.Enabled = true;
                     ac.BloquearText(this.gbCliente, false); ac.BloquearText(this.panel1, false);
@@ -535,7 +560,7 @@ namespace CapaPresentacion
                 DialogResult dr = MessageBox.Show("¿Desea anular boleta?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
-                    int result = negVenta.Intancia.AnularComprobante(ser, corr,1);
+                    int result = VentaServices.Intancia.AnularComprobante(ser, corr,1);
                     MessageBox.Show("Boleta anulada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnAnular.Enabled = false;
                 }
