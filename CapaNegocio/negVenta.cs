@@ -122,6 +122,13 @@ namespace CapaNegocio
             }
         }
 
+
+        public void RestarStock(int cantidad, int producto)
+        {
+
+            
+            datVenta.Instancia.stockLess(cantidad, producto);
+        }
         public int GuardarVenta(entVenta v,int id_tipdocventa,String serie) {
             try
             {
@@ -172,6 +179,10 @@ namespace CapaNegocio
                 throw;
             }
         }
+
+
+
+
 
         #endregion metodos
 

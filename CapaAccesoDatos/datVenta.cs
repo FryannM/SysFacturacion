@@ -312,7 +312,7 @@ namespace CapaAccesoDatos
             finally { cmd.Connection.Close(); }
         }
 
-        public  void RestarStock(int cantidad, int idProducto)
+        public  void stockLess(int cantidad, int idProducto)
         {
             SqlCommand cmd = null;
             try

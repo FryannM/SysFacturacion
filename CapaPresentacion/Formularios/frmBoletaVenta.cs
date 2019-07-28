@@ -456,12 +456,33 @@ namespace CapaPresentacion
             }
         }
 
+         private entDetalleVenta Stock()
+        {
+
+           
+            var result = new entDetalleVenta();
+            foreach (DataGridViewRow row in dgvDetalleBoleta.Rows)
+            {
+
+                result.Id_Prod_Det = Convert.ToInt32(row.Cells[0].Value);
+                result.Cantidad_Det = Convert.ToInt32(row.Cells[2].Value);
+                
+                 
+                
+            }
+
+             negVenta.Intancia.RestarStock(result.Cantidad_Det,result.Id_Prod_Det);
+
+            return result;
+
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
                 
-                DialogResult r = MessageBox.Show("¿Desea guardar Boleta?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult r = MessageBox.Show("¿Desea Registrar la Venta?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
                 {
                     SoloNumCeldaGrid();
@@ -507,8 +528,12 @@ namespace CapaPresentacion
                     }
                     v.detalleventa = Detalle;
                     v.Desc_Venta = "";
+                    Stock();
                     CargarSerie_correlativo();
                     int result = negVenta.Intancia.GuardarVenta(v, 1, serie.Numero_Serie);
+
+                     
+                      //var stock= negVenta.Equals.Resta
                     MessageBox.Show("Se guardo de manera correcta!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvDetalleBoleta.Enabled = false; ControlBotones(true, false, false, false); btnAgregarItem.Enabled = false; btnAnular.Enabled = true;
                     ac.BloquearText(this.gbCliente, false); ac.BloquearText(this.panel1, false);
