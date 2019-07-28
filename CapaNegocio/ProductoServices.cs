@@ -24,7 +24,7 @@ namespace CapaNegocio
 
             try
             {
-                int r = datProducto.Instancia.EliminarMateria(id);
+                int r = ProductoRepository.Instancia.EliminarMateria(id);
                 if (r <= 0)
                 {
                     throw new Exception("Ocurrio un error al Eliminar Material");
@@ -41,7 +41,7 @@ namespace CapaNegocio
         {
             try
             {
-                entMaterial m = datProducto.Instancia.BuscarMaterial(idMaterial);
+                entMaterial m = ProductoRepository.Instancia.BuscarMaterial(idMaterial);
                 return m;
             }
             catch (Exception)
@@ -53,7 +53,7 @@ namespace CapaNegocio
         public List<entMaterial> ListarMaterial() {
             try
             {
-                List<entMaterial> Lista = datProducto.Instancia.ListarMaterial();
+                List<entMaterial> Lista = ProductoRepository.Instancia.ListarMaterial();
                 if (Lista.Count<=0) {
                     throw new ApplicationException("Lista Material vacia");
                 }
@@ -69,7 +69,7 @@ namespace CapaNegocio
         public int EditarMaterial(int idMaterial,String material) {
             try
             {
-                int i = datProducto.Instancia.EditarMaterial(idMaterial,material);
+                int i = ProductoRepository.Instancia.EditarMaterial(idMaterial,material);
                 if (i <= 0)
                 {
                     throw new Exception("Ocurrio un error al Editar Material");
@@ -88,7 +88,7 @@ namespace CapaNegocio
         {
             try
             {
-                int i = datProducto.Instancia.CrearMaterial(m);
+                int i = ProductoRepository.Instancia.CrearMaterial(m);
                 if (i <= 0)
                 {
                     throw new Exception("Ocurrio un error al registrar Material");
@@ -108,7 +108,7 @@ namespace CapaNegocio
             try
             {
                 List<entProducto> Lista = null;
-                Lista = datProducto.Instancia.LstProdIndicadorAvanzada(name);
+                Lista = ProductoRepository.Instancia.LstProdIndicadorAvanzada(name);
                 return Lista;
             }
             catch (Exception)
@@ -123,7 +123,7 @@ namespace CapaNegocio
             try
             {
                 List<entProducto> Lista = null;
-                Lista = datProducto.Instancia.ListarProductoIndicador(codigo, id_cat, rango);
+                Lista = ProductoRepository.Instancia.ListarProductoIndicador(codigo, id_cat, rango);
                 if (Lista.Count == 0) throw new ApplicationException("No se encontro ningun registro");
                 else if (Lista == null) throw new ApplicationException("Se produjo un error en la carga de la lista de productos");
                 return Lista;
@@ -140,7 +140,7 @@ namespace CapaNegocio
             try
             {
                 List<entProducto> Lista = null;
-                Lista = datProducto.Instancia.BuscarProductoAvanzada(tip_busq, val_busqueda);
+                Lista = ProductoRepository.Instancia.BuscarProductoAvanzada(tip_busq, val_busqueda);
                 return Lista;
             }
             catch (Exception)
@@ -155,7 +155,7 @@ namespace CapaNegocio
             try
             {
                 entProducto p = null;
-                p = datProducto.Instancia.BuscarProducto(id_producto);
+                p = ProductoRepository.Instancia.BuscarProducto(id_producto);
                 if (p == null) throw new ApplicationException("No se encontro producto seleccionado en la BD");
                 return p;
             }
@@ -171,7 +171,7 @@ namespace CapaNegocio
             try
             {
                 List<entProducto> Lista = null;
-                Lista = datProducto.Instancia.ListarProducto();
+                Lista = ProductoRepository.Instancia.ListarProducto();
                 if (Lista.Count == 0) throw new ApplicationException("Lista de productos vacia");
                 else if (Lista == null) throw new ApplicationException("Se produjo un error en la carga de la lista de productos");
                 return Lista;
@@ -207,7 +207,7 @@ namespace CapaNegocio
                 cadXml += "idmaterial='" + p.material.Id + "'/>";
 
                 cadXml = "<root>" + cadXml + "</root>";
-                int i = datProducto.Instancia.MantenimientoProducto(cadXml);
+                int i = ProductoRepository.Instancia.MantenimientoProducto(cadXml);
                 if (i <= 0)
                 {
                     throw new ApplicationException("No se pudo completar la acción, Intentelo otra vez");
@@ -235,7 +235,7 @@ namespace CapaNegocio
                 cadXml += "correo='" + pr.Correo_Proveedor + "' ";
                 cadXml += "tipoedicion='" + tipoedicion + "'/>";
                 cadXml = "<root>" + cadXml + "</root>";
-                int i = datProducto.Instancia.MantenimientoProveedor(cadXml);
+                int i = ProductoRepository.Instancia.MantenimientoProveedor(cadXml);
                 if (i <= 0)
                 {
                     throw new ApplicationException("No se pudo completar la acción, Intentelo otra vez");
@@ -261,7 +261,7 @@ namespace CapaNegocio
                 cadXml += "abreviatura='" + um.Abreviatura_Umed + "' ";
                 cadXml += "tipoedicion='" + tipoedicion + "'/>";
                 cadXml = "<root>" + cadXml + "</root>";
-                int i = datProducto.Instancia.MantenimientoUnidMedida(cadXml);
+                int i = ProductoRepository.Instancia.MantenimientoUnidMedida(cadXml);
                 if (i <= 0)
                 {
                     throw new ApplicationException("No se pudo completar la acción, Intentelo otra vez");
@@ -279,7 +279,7 @@ namespace CapaNegocio
             try
             {
                 entProveedor pr = null;
-                pr = datProducto.Instancia.BuscarProveedor(id_Prove);
+                pr = ProductoRepository.Instancia.BuscarProveedor(id_Prove);
                 if (pr == null) throw new ApplicationException("No se encontro registro en la BD");
                 return pr;
             }
@@ -295,7 +295,7 @@ namespace CapaNegocio
             try
             {
                 entUnidadMedida um = null;
-                um = datProducto.Instancia.BuscarUniMedida(id_uniMed);
+                um = ProductoRepository.Instancia.BuscarUniMedida(id_uniMed);
                 if (um == null) throw new ApplicationException("No se encontro registro en la BD");
                 return um;
             }
@@ -311,7 +311,7 @@ namespace CapaNegocio
             try
             {
                 List<entProveedor> Lista = null;
-                Lista = datProducto.Instancia.ListarProveedor();
+                Lista = ProductoRepository.Instancia.ListarProveedor();
                 //        if (Lista.Count == 0) throw new ApplicationException("No se encontraron registros");
                 return Lista;
             }
@@ -327,7 +327,7 @@ namespace CapaNegocio
             try
             {
                 List<entUnidadMedida> Lista = null;
-                Lista = datProducto.Instancia.ListarUniMedida();
+                Lista = ProductoRepository.Instancia.ListarUniMedida();
                 //if (Lista.Count == 0) throw new ApplicationException("No se encontraron registros");
                 return Lista;
             }
@@ -344,7 +344,7 @@ namespace CapaNegocio
             {
                 if (cat_id.ToString() == "") throw new ApplicationException("Debe seleccionar un registro de la lista");
                 entCategoria c = null;
-                c = datProducto.Instancia.BuscarCategoria(cat_id);
+                c = ProductoRepository.Instancia.BuscarCategoria(cat_id);
                 if (c == null) throw new ApplicationException("No se encontro el registro en BD");
                 return c;
             }
@@ -369,7 +369,7 @@ namespace CapaNegocio
                 cadXml += "usuarioupdate='" + cat.UsuarioUpdate_Cat + "' ";
                 cadXml += "tipoedicion='" + tipoedicion + "'/>";
                 cadXml = "<root>" + cadXml + "</root>";
-                int i = datProducto.Instancia.MantenimientoCategoria(cadXml);
+                int i = ProductoRepository.Instancia.MantenimientoCategoria(cadXml);
                 if (i <= 0)
                 {
                     throw new ApplicationException("No se pudo completar la acción, Intentelo otra vez");
@@ -386,7 +386,7 @@ namespace CapaNegocio
         {
             try
             {
-                return datProducto.Instancia.ListarCategoria();
+                return ProductoRepository.Instancia.ListarCategoria();
             }
             catch (Exception)
             {

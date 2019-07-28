@@ -9,12 +9,12 @@ using System.Data;
 using Entidades;
 namespace CapaAccesoDatos
 {
-    public class datSeguridad{
+    public class SeguridadRepository{
 
         #region singleton
-        private static readonly datSeguridad _instancia = new datSeguridad();
-        public static datSeguridad Instancia{
-            get { return datSeguridad._instancia; }
+        private static readonly SeguridadRepository _instancia = new SeguridadRepository();
+        public static SeguridadRepository Instancia {
+            get { return SeguridadRepository._instancia; }
         }
         #endregion singleton
 
@@ -32,7 +32,7 @@ namespace CapaAccesoDatos
 
                 SqlParameter p = new SqlParameter("@retorno", DbType.Int32);
                 p.Direction = ParameterDirection.ReturnValue;
-                cmd.Parameters.Add(p);
+                    cmd.Parameters.Add(p);
                 cn.Open();
                 var result =  cmd.ExecuteNonQuery();
                 return result;

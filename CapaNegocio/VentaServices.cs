@@ -21,7 +21,7 @@ namespace CapaNegocio
         public entVenta VentaDetalle(int id_venta) {
             try
             {
-                entVenta v = datVenta.Instancia.LstVentaDetalle(id_venta);
+                entVenta v = VentaRepository.Instancia.LstVentaDetalle(id_venta);
                 if (v == null) throw new ApplicationException("Ocurrio un error al tratar de mostrar detalle");
                 //else if (v.detalleventa.Count == 0 || v.detalleventa == null) { throw new ApplicationException("No se encontraron items");return v; }
                 return v;
@@ -36,7 +36,7 @@ namespace CapaNegocio
         public int AnularVentaxId(int id_venta) {
             try
             {
-                int retorno = datVenta.Instancia.AnularVentaXid(id_venta);
+                int retorno = VentaRepository.Instancia.AnularVentaXid(id_venta);
                 if (retorno == 0) throw new ApplicationException("No se pudo completar la acción");
                 return retorno;
             }
@@ -51,7 +51,7 @@ namespace CapaNegocio
         {
             try
             {
-                List<entVenta> Lista = datVenta.Instancia.ListarVenta(fdesde, fhasta,idSucursal);
+                List<entVenta> Lista = VentaRepository.Instancia.ListarVenta(fdesde, fhasta,idSucursal);
                 if (Lista == null) throw new ApplicationException("Error al cargar historial de ventas");
                 else if (Lista.Count == 0) throw new ApplicationException("Lista de historial de ventas vacia");
                 return Lista;
@@ -66,7 +66,7 @@ namespace CapaNegocio
         public List<entTipoPago> CargarTipoPago() {
             try
             {
-                List<entTipoPago> Lista = datVenta.Instancia.CargarTipoPago();
+                List<entTipoPago> Lista = VentaRepository.Instancia.CargarTipoPago();
                 if (Lista == null) throw new ApplicationException("Error al cargar tipo de pago");
                 else if (Lista.Count == 0) throw new ApplicationException("Litsa tipo de pago vacia");
                 return Lista;
@@ -81,7 +81,7 @@ namespace CapaNegocio
         public int AnularComprobante(String serie,String correlativo,int tipcomprobante){
             try
             {
-                int result = datVenta.Instancia.AnularComprobante(serie,correlativo,tipcomprobante);
+                int result = VentaRepository.Instancia.AnularComprobante(serie,correlativo,tipcomprobante);
                 if (result <= 0) throw new ApplicationException("No se pudo anular comprobante");
                 return result;
             }
@@ -96,7 +96,7 @@ namespace CapaNegocio
         public String CargarCorrelativo(int id_tipcom,String serie) {
             try
             {
-                String correlativo = datVenta.Instancia.CargarCorrelativo(id_tipcom,serie);
+                String correlativo = VentaRepository.Instancia.CargarCorrelativo(id_tipcom,serie);
                 if (correlativo == null) throw new ApplicationException("Error al cargar número correlativo");
                 return correlativo;
             }
@@ -110,7 +110,7 @@ namespace CapaNegocio
         public entSerie CargarSerie(int id_suc,int id_tipcom) {
             try
             {
-                entSerie s = datVenta.Instancia.CargarSerie(id_suc,id_tipcom);
+                entSerie s = VentaRepository.Instancia.CargarSerie(id_suc,id_tipcom);
                 if (s == null) throw new ApplicationException("Error al cargar serie, problema con dato de sucursal");
                 return s;
                 
@@ -127,7 +127,7 @@ namespace CapaNegocio
         {
 
             
-            datVenta.Instancia.stockLess(cantidad, producto);
+            VentaRepository.Instancia.stockLess(cantidad, producto);
         }
         public int GuardarVenta(entVenta v,int id_tipdocventa,String serie) {
             try
@@ -156,7 +156,7 @@ namespace CapaNegocio
                 }
                 Cadxml += "</venta>";
                 Cadxml = "<root>" + Cadxml + "</root>";
-                int i = datVenta.Instancia.GuardarVenta(Cadxml, id_tipdocventa);
+                int i = VentaRepository.Instancia.GuardarVenta(Cadxml, id_tipdocventa);
                 if (i <= 0) throw new ApplicationException("Ocurrio un erro al guardar venta actual");
                 return i;
             }
@@ -169,7 +169,7 @@ namespace CapaNegocio
         public List<entMoneda> ListarMoneda() {
             try
             {
-                List<entMoneda> Lista = datVenta.Instancia.ListarMoneda();
+                List<entMoneda> Lista = VentaRepository.Instancia.ListarMoneda();
                 if (Lista.Count <= 0) throw new ApplicationException("Lista moneda esta vacia");
                 else if(Lista==null) throw new ApplicationException("Error al cargar lista de moneda");
                 return Lista;
