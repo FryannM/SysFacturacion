@@ -77,7 +77,7 @@ namespace CapaPresentacion
                 {
                     String val_entrada = txtBusqProd.Text;
                     int num = 0;
-                    List<entProducto> Lista = negProducto.Instancia.BuscarprodAvanzada(tip_busqueda, val_entrada);
+                    List<entProducto> Lista = ProductoServices.Instancia.BuscarprodAvanzada(tip_busqueda, val_entrada);
                     dgvProductos.Rows.Clear();
                     for (int i = 0; i < Lista.Count; i++)
                     {
@@ -148,7 +148,7 @@ namespace CapaPresentacion
             {
                 btnVender.Enabled = false;
                 int num = 0;
-                List<entProducto> Lista = negProducto.Instancia.BuscarprodAvanzada(tip_busqueda, "");
+                List<entProducto> Lista = ProductoServices.Instancia.BuscarprodAvanzada(tip_busqueda, "");
                 dgvProductos.Rows.Clear();
                 for (int i = 0; i < Lista.Count; i++)
                 {

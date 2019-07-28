@@ -59,11 +59,11 @@ namespace CapaPresentacion
 
                 cboNivelAcceso.ValueMember = "Id_NivelAcc";
                 cboNivelAcceso.DisplayMember = "Numero_NivelAcc";
-                cboNivelAcceso.DataSource = negSeguridad.Instancia.ListarNivelAcceso();
+                cboNivelAcceso.DataSource = SeguridadServices.Instancia.ListarNivelAcceso();
 
                 cboDirSucursal.ValueMember = "Id_Suc";
                 cboDirSucursal.DisplayMember = "Direccion_Suc";
-                cboDirSucursal.DataSource = negSeguridad.Instancia.ListarSucursal();
+                cboDirSucursal.DataSource = SeguridadServices.Instancia.ListarSucursal();
 
                 ControlBotones(true, false, false, false, false, true);
                 ac.BloquearText(this.panel1, false);
@@ -88,7 +88,7 @@ namespace CapaPresentacion
             {
                 Int32 i = Convert.ToInt32(cboNivelAcceso.SelectedValue.ToString());
                 entNivelAcceso na = null;
-                na = negSeguridad.Instancia.ListarNivelAccesoDesc(i);
+                na = SeguridadServices.Instancia.ListarNivelAccesoDesc(i);
                 txtDescNivelAcceso.Text = na.Descripcion_NivelAcc;
             }
             catch (Exception ex)
@@ -152,7 +152,7 @@ namespace CapaPresentacion
                 u.UsuarioCreacion_Usuario = id_Usuario;
 
                 if (txtIdusuario.Text != "") { tipoedicion = 2; u.Id_Usuario = Convert.ToInt32(txtIdusuario.Text); } 
-                int i = negSeguridad.Instancia.MantenimientoUsuario(u, tipoedicion);
+                int i = SeguridadServices.Instancia.MantenimientoUsuario(u, tipoedicion);
                 MessageBox.Show("¡Registro Correcto!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ControlBotones(true, false, false, false, false, true);
                 ac.BloquearText(this.panel1, false);
@@ -179,7 +179,7 @@ namespace CapaPresentacion
                 DialogResult r = MessageBox.Show("¿Desea eliminar el usuario seleccionado?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
                 {
-                    int result = negSeguridad.Instancia.MantenimientoUsuario(u, 3);
+                    int result = SeguridadServices.Instancia.MantenimientoUsuario(u, 3);
                     MessageBox.Show("Se Elimino usuario, paso a Estado: Inactivo", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 ControlBotones(true, false, false, false, false, true);
@@ -227,7 +227,7 @@ namespace CapaPresentacion
             {
                 Int32 idSuc = Convert.ToInt32(cboDirSucursal.SelectedValue);
                 entSucursal s = null;
-                s = negSeguridad.Instancia.MostrarCodSuc(idSuc);
+                s = SeguridadServices.Instancia.MostrarCodSuc(idSuc);
                 txtCodSucursal.Text = s.Codigo_Suc;
             }
             catch (Exception ex)
@@ -244,7 +244,7 @@ namespace CapaPresentacion
                 String por = cboBuscar.SelectedItem.ToString();
                 String valor = txtBuscar.Text;
                 entUsuario u = null;
-                u = negSeguridad.Instancia.BuscarUsario(por, valor);
+                u = SeguridadServices.Instancia.BuscarUsario(por, valor);
                 txtIdusuario.Text =u.Id_Usuario.ToString();
                 txtCodUsuario.Text = u.Codigo_Usuario;
                 txtnombre.Text = u.Nombre_Usuario;

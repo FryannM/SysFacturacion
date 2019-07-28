@@ -65,7 +65,7 @@ namespace CapaPresentacion
                     efectivo=0.0,tarjetacred=0.0,contrareembolso=0.0,deposito=0.0,dolares=0.0,inversion=0.0,totalUtilidades = 0.0;
                 dgvHistorialVentas.Rows.Clear();
                 int idSucursal = (int)cboSucursal.SelectedValue;
-                List<entVenta> Lista = negVenta.Intancia.ListarVenta(dtpDesde.Value.ToString("yyyy/MM/dd"), dtpHasta.Value.ToString("yyyy/MM/dd"),idSucursal);
+                List<entVenta> Lista = VentaServices.Intancia.ListarVenta(dtpDesde.Value.ToString("yyyy/MM/dd"), dtpHasta.Value.ToString("yyyy/MM/dd"),idSucursal);
                 for (int i = 0; i < Lista.Count; i++) {
                     String[] fila = new String[] { Lista[i].Id_Venta.ToString(), Lista[i].Codigo_Venta,Lista[i].Estado_Venta,Lista[i].tipocomprobante.Nombre_TipCom,
                     Lista[i].Correlativo_Venta,Lista[i].FechaVenta.ToString("dd-MM-yy"),Lista[i].FechaVenta.ToString("HH:mm:ss"),Lista[i].Igv_Venta.ToString(),(Lista[i].Total-Lista[i].Descuento_Venta).ToString("0.00"),(Lista[i].Utilidad).ToString("0.00")};
@@ -111,7 +111,7 @@ namespace CapaPresentacion
             {
                 List<entSucursal> lista = new List<entSucursal>();
                 lista.Add(new entSucursal() { Id_Suc = 0, Direccion_Suc = "Mostrar Todo" });
-                foreach (entSucursal item in negSeguridad.Instancia.ListarSucursal()) {
+                foreach (entSucursal item in SeguridadServices.Instancia.ListarSucursal()) {
                     lista.Add(item);
                 }
                 cboSucursal.ValueMember = "Id_Suc";
@@ -161,7 +161,7 @@ namespace CapaPresentacion
                 DialogResult result = MessageBox.Show("¿Desea anular comprobante?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    int i = negVenta.Intancia.AnularVentaxId(id_venta);
+                    int i = VentaServices.Intancia.AnularVentaxId(id_venta);
                     MessageBox.Show("Comprobante anulado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LlenarGrid();
                     

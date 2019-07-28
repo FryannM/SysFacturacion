@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaVenta));
             this.dgvHistorialVentas = new System.Windows.Forms.DataGridView();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -598,9 +599,9 @@
             this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(19, 26);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 15);
+            this.label6.Size = new System.Drawing.Size(63, 15);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Boleta:";
+            this.label6.Text = "Productos";
             // 
             // lblTotal
             // 
@@ -655,8 +656,7 @@
             // btnDetalle
             // 
             this.btnDetalle.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalle.Image = global::CapaPresentacion.Properties.Resources.Shopping_cart_32x32_32;
-            this.btnDetalle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDetalle.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalle.Image")));
             this.btnDetalle.Location = new System.Drawing.Point(7, 34);
             this.btnDetalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDetalle.Name = "btnDetalle";

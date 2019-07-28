@@ -41,10 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="negCliente.cs" />
-    <Compile Include="negProducto.cs" />
-    <Compile Include="negSeguridad.cs" />
-    <Compile Include="negVenta.cs" />
+    <Compile Include="ClienteServices.cs" />
+    <Compile Include="ProductoServices.cs" />
+    <Compile Include="SeguridadServices.cs" />
+    <Compile Include="VentaServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

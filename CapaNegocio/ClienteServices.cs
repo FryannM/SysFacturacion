@@ -7,12 +7,12 @@ using CapaAccesoDatos;
 using Entidades;
 namespace CapaNegocio
 {
-   public class negCliente
+   public class ClienteServices
     {
         #region singleton
-        private static readonly negCliente _intancia = new negCliente();
-        public static negCliente Intancia {
-            get { return negCliente._intancia; }
+        private static readonly ClienteServices _intancia = new ClienteServices();
+        public static ClienteServices Intancia {
+            get { return ClienteServices._intancia; }
         }
         #endregion singleton
 

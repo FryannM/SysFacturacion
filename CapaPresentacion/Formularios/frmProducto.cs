@@ -205,19 +205,19 @@ namespace CapaPresentacion
             {
                 cboCategoria.ValueMember = "Id_Cat";
                 cboCategoria.DisplayMember = "Nombre_Cat";
-                cboCategoria.DataSource = negProducto.Instancia.ListarCategoria();
+                cboCategoria.DataSource = ProductoServices.Instancia.ListarCategoria();
 
                 cboUnidMed.ValueMember = "Id_Umed";
                 cboUnidMed.DisplayMember = "Descripcion_Umed";
-                cboUnidMed.DataSource = negProducto.Instancia.ListarUnidMed();
+                cboUnidMed.DataSource = ProductoServices.Instancia.ListarUnidMed();
 
                 cboProveedor.ValueMember = "Id_Proveedor";
                 cboProveedor.DisplayMember = "RazSocial_Proveedor";
-                cboProveedor.DataSource = negProducto.Instancia.ListarProveedor();
+                cboProveedor.DataSource = ProductoServices.Instancia.ListarProveedor();
 
                 cboMaterial.ValueMember = "Id";
                 cboMaterial.DisplayMember = "Nombre";
-                cboMaterial.DataSource = negProducto.Instancia.ListarMaterial();
+                cboMaterial.DataSource = ProductoServices.Instancia.ListarMaterial();
 
 
             }
@@ -256,7 +256,7 @@ namespace CapaPresentacion
             {
                 entProducto p = null;
                 // int id_prod = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
-                p = negProducto.Instancia.BuscarProducto(id_prod);
+                p = ProductoServices.Instancia.BuscarProducto(id_prod);
                 txtIdP.Text = p.Id_Prod.ToString();
                 txtCodigoP.Text = p.Codigo_Prod;
                 txtNombre.Text = p.Nombre_Prod;
@@ -379,7 +379,7 @@ namespace CapaPresentacion
 
                 p.UsuarioCreacion_Prod = idUsuario;
                 p.UsuarioUpdate_Prod = idUsuario;
-                int i = negProducto.Instancia.MantenimientoProducto(p, tipoedicion);
+                int i = ProductoServices.Instancia.MantenimientoProducto(p, tipoedicion);
                 MessageBox.Show("¡Registro Correcto!", "Mensaje",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -409,7 +409,7 @@ namespace CapaPresentacion
                 DialogResult r = MessageBox.Show("¿Desea eliminar Registro seleccionado?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
                 {
-                    int i = negProducto.Instancia.MantenimientoProducto(p, 3);
+                    int i = ProductoServices.Instancia.MantenimientoProducto(p, 3);
                     MessageBox.Show("Registro eliminado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
@@ -467,7 +467,7 @@ namespace CapaPresentacion
             {
                 dgvCategoria.Rows.Clear();
                 List<entCategoria> Lista = null;
-                Lista = negProducto.Instancia.ListarCategoria();
+                Lista = ProductoServices.Instancia.ListarCategoria();
                 int num = 0;
                 for (int i = 0; i < Lista.Count; i++)
                 {
@@ -487,7 +487,7 @@ namespace CapaPresentacion
             {
                 dgvMaterial.Rows.Clear();
                 List<entMaterial> Lista = null;
-                Lista = negProducto.Instancia.ListarMaterial();
+                Lista = ProductoServices.Instancia.ListarMaterial();
                 int num = 0;
                 for (int i = 0; i < Lista.Count; i++)
                 {
@@ -509,7 +509,7 @@ namespace CapaPresentacion
                 int num = 0;
                 dgvUnidadMedida.Rows.Clear();
                 List<entUnidadMedida> um = null;
-                um = negProducto.Instancia.ListarUnidMed();
+                um = ProductoServices.Instancia.ListarUnidMed();
                 for (int i = 0; i < um.Count; i++)
                 {
                     num++;
@@ -530,7 +530,7 @@ namespace CapaPresentacion
                 int num = 0;
                 dgvProveedor.Rows.Clear();
                 List<entProveedor> pr = null;
-                pr = negProducto.Instancia.ListarProveedor();
+                pr = ProductoServices.Instancia.ListarProveedor();
                 for (int i = 0; i < pr.Count; i++)
                 {
                     num++;
@@ -549,7 +549,7 @@ namespace CapaPresentacion
             try
             {
                 dgvProductos.Rows.Clear();
-                List<entProducto> Lista = negProducto.Instancia.ListarProducto();
+                List<entProducto> Lista = ProductoServices.Instancia.ListarProducto();
                 int num = 0;
                 for (int i = 0; i < Lista.Count(); i++)
                 {
@@ -622,7 +622,7 @@ namespace CapaPresentacion
                 c.Descripcion_Cat = txtDescripcionC.Text;
                 c.UsuarioCreacion_Cat = idUsuario;
                 c.UsuarioUpdate_Cat = idUsuario;
-                int i = negProducto.Instancia.MantenimientoCategoria(c, tipoedicion);
+                int i = ProductoServices.Instancia.MantenimientoCategoria(c, tipoedicion);
                 MessageBox.Show("¡Registro Correcto!", "Mensaje",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ControlBotones("C",true, false, false, false, false, true);
@@ -646,7 +646,7 @@ namespace CapaPresentacion
                 DialogResult r = MessageBox.Show("¿Desea eliminar categoria seleccionada?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
                 {
-                    int i = negProducto.Instancia.MantenimientoCategoria(c, 3);
+                    int i = ProductoServices.Instancia.MantenimientoCategoria(c, 3);
                     MessageBox.Show("Registro eliminado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
@@ -764,7 +764,7 @@ namespace CapaPresentacion
                 if (txtidUM.Text != "") { tipoedicion = 2; um.Id_Umed = Convert.ToInt32(txtidUM.Text); }
                 um.Descripcion_Umed = txtDescripcionUM.Text;
                 um.Abreviatura_Umed = txtAbrev.Text;
-                int i = negProducto.Instancia.MantenimientoUnidMedida(um, tipoedicion);
+                int i = ProductoServices.Instancia.MantenimientoUnidMedida(um, tipoedicion);
                 MessageBox.Show("¡Registro Correcto!", "Mensaje",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -789,7 +789,7 @@ namespace CapaPresentacion
                 DialogResult r = MessageBox.Show("¿Desea eliminar registro seleccionado?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
                 {
-                    int i = negProducto.Instancia.MantenimientoUnidMedida(um, 3);
+                    int i = ProductoServices.Instancia.MantenimientoUnidMedida(um, 3);
                     MessageBox.Show("Registro eliminado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 ControlBotones("UM",true, false, false, false, false, true);
@@ -867,7 +867,7 @@ namespace CapaPresentacion
                 pr.Telefono_Proveedor = txtTelefono.Text;
                 pr.Celular_Proveedor = txtCelular.Text;
                 pr.Correo_Proveedor = txtCorreo.Text;
-                int i = negProducto.Instancia.MantenimientoProveedor(pr, tipoedicion);
+                int i = ProductoServices.Instancia.MantenimientoProveedor(pr, tipoedicion);
                 MessageBox.Show("¡Registro Correcto!", "Mensaje",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -892,7 +892,7 @@ namespace CapaPresentacion
                 DialogResult r = MessageBox.Show("¿Desea eliminar Registro seleccionado?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
                 {
-                    int i = negProducto.Instancia.MantenimientoProveedor(pr, 3);
+                    int i = ProductoServices.Instancia.MantenimientoProveedor(pr, 3);
                     MessageBox.Show("Registro eliminado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 ControlBotones("UM",true, false, false, false, false, true);
@@ -963,7 +963,7 @@ namespace CapaPresentacion
             {
                 int id_cate = Convert.ToInt32(dgvCategoria.CurrentRow.Cells[0].Value);
                 entCategoria c = null;
-                c = negProducto.Instancia.BuscrCategoria(id_cate);
+                c = ProductoServices.Instancia.BuscrCategoria(id_cate);
                 txtidC.Text = c.Id_Cat.ToString();
                 txtCodigoC.Text = c.Codigo_Cat;
                 txtNombreC.Text = c.Nombre_Cat;
@@ -984,7 +984,7 @@ namespace CapaPresentacion
             {
                 int id_Unidmed = Convert.ToInt32(dgvUnidadMedida.CurrentRow.Cells[0].Value);
                 entUnidadMedida um = null;
-                um = negProducto.Instancia.BuscarUnidMedida(id_Unidmed);
+                um = ProductoServices.Instancia.BuscarUnidMedida(id_Unidmed);
                 txtidUM.Text = um.Id_Umed.ToString();
                 txtCodigoUM.Text = um.Codigo_Umed;
                 txtDescripcionUM.Text = um.Descripcion_Umed;
@@ -1010,7 +1010,7 @@ namespace CapaPresentacion
             {
                 int id_Proveedor = Convert.ToInt32(dgvProveedor.CurrentRow.Cells[0].Value);
                 entProveedor pr = null;
-                pr = negProducto.Instancia.BuscarProveedor(id_Proveedor);
+                pr = ProductoServices.Instancia.BuscarProveedor(id_Proveedor);
                 txtIdPR.Text = pr.Id_Proveedor.ToString();
                 txtCodigoPR.Text = pr.Cod_Proveedor;
                 txtRazSocial.Text = pr.RazSocial_Proveedor;
@@ -1169,8 +1169,8 @@ namespace CapaPresentacion
         {
             try
             {
-                if (!String.IsNullOrEmpty(txtIdMaterial.Text)) { /*editar*/ int i = negProducto.Instancia.EditarMaterial(Convert.ToInt32(txtIdMaterial.Text), txtNombreMaterial.Text); }
-                else { /*guardar*/int i = negProducto.Instancia.RegistrarMaterial(txtNombreMaterial.Text); }
+                if (!String.IsNullOrEmpty(txtIdMaterial.Text)) { /*editar*/ int i = ProductoServices.Instancia.EditarMaterial(Convert.ToInt32(txtIdMaterial.Text), txtNombreMaterial.Text); }
+                else { /*guardar*/int i = ProductoServices.Instancia.RegistrarMaterial(txtNombreMaterial.Text); }
            
                 ControlBotones("M",true, false, false, false, false, true);
                 txtNombreMaterial.Enabled = false;
@@ -1214,7 +1214,7 @@ namespace CapaPresentacion
             {
                 int id_material = Convert.ToInt32(dgvMaterial.CurrentRow.Cells[0].Value);
                 entMaterial m = null;
-                m = negProducto.Instancia. BuscarMaterial(id_material);
+                m = ProductoServices.Instancia. BuscarMaterial(id_material);
                 txtIdMaterial.Text = m.Id.ToString();
                 txtCodigoMaterial.Text = m.Id.ToString("000");
                 txtNombreMaterial.Text = m.Nombre;
@@ -1241,7 +1241,7 @@ namespace CapaPresentacion
                 DialogResult r = MessageBox.Show("¿Desea eliminar Material seleccionado?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
                 {
-                    int i = negProducto.Instancia.EliminarMaterial(id_material);
+                    int i = ProductoServices.Instancia.EliminarMaterial(id_material);
                     MessageBox.Show("Registro eliminado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 

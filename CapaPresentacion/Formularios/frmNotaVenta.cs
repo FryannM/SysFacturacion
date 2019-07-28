@@ -104,10 +104,10 @@ namespace CapaPresentacion
         {
             try
             {
-                serie = negVenta.Intancia.CargarSerie(1, 5);
+                serie = VentaServices.Intancia.CargarSerie(1, 5);
                 ser = serie.Numero_Serie;
-                lblCorrelativo.Text =negVenta.Intancia.CargarCorrelativo(serie.tipocom.Id_TipCom, serie.Numero_Serie);
-                corr = negVenta.Intancia.CargarCorrelativo(serie.tipocom.Id_TipCom, serie.Numero_Serie);
+                lblCorrelativo.Text =VentaServices.Intancia.CargarCorrelativo(serie.tipocom.Id_TipCom, serie.Numero_Serie);
+                corr = VentaServices.Intancia.CargarCorrelativo(serie.tipocom.Id_TipCom, serie.Numero_Serie);
             }
             catch (Exception)
             {
@@ -223,7 +223,7 @@ namespace CapaPresentacion
             {
                 entCliente c = null;
                 String num_doc = txtNumDoc.Text;
-                c = negCliente.Intancia.BuscarCliente(0, num_doc);
+                c = ClienteServices.Intancia.BuscarCliente(0, num_doc);
                 txtNombreCliente.Text = c.Nombre_Cliente;
                 txtNumDoc.Text = c.NumeroDoc_Cliente.Trim();
                 LocalBD.Instancia.ReturnIdClienteNV(1, c.Id_Cliente);
@@ -255,7 +255,7 @@ namespace CapaPresentacion
                 entCliente c = null;
 
                 int id_cliente = LocalBD.Instancia.ReturnIdClienteNV(0, 0);
-                c = negCliente.Intancia.BuscarCliente(id_cliente, 0.ToString());
+                c = ClienteServices.Intancia.BuscarCliente(id_cliente, 0.ToString());
                 btnBuscarXid.Enabled = false; btnBuscarCliente.Enabled = true;
                 txtNombreCliente.Text = c.Nombre_Cliente;
                 txtNumDoc.Text = c.NumeroDoc_Cliente.Trim();
@@ -403,7 +403,7 @@ namespace CapaPresentacion
                     v.detalleventa = Detalle;
                     v.Desc_Venta = rtxtDescripcion.Text;
                     CargarSerie_correlativo();
-                    int result = negVenta.Intancia.GuardarVenta(v, serie.tipocom.Id_TipCom, serie.Numero_Serie);
+                    int result = VentaServices.Intancia.GuardarVenta(v, serie.tipocom.Id_TipCom, serie.Numero_Serie);
                     MessageBox.Show("Nota de venta guardo de manera correcta!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvDetalleNotaVenta.Enabled = false; ControlBotones(true, false, false, false); btnAgregarItem.Enabled = false; btnAnular.Enabled = true;
                     ac.BloquearText(this.gbCliente, false); ac.BloquearText(this.panel1, false);
@@ -425,7 +425,7 @@ namespace CapaPresentacion
                 DialogResult dr = MessageBox.Show("¿Desea anular esta nota de venta?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
-                    int result = negVenta.Intancia.AnularComprobante(ser, corr, 5);
+                    int result = VentaServices.Intancia.AnularComprobante(ser, corr, 5);
                     MessageBox.Show("Nota de venta anulada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnAnular.Enabled = false;
                 }
@@ -534,7 +534,7 @@ namespace CapaPresentacion
                 ControlBotones(true, false, true, false); btnBuscarXid.Enabled = false;
                 txtSubtotal.Text = 0.ToString(); txtDescuento.Text = 0.ToString(); txtTotal.Text = 0.ToString();
                 CargarSerie_correlativo();
-                u = negSeguridad.Instancia.BuscarUsario("Id", this.idusuario.ToString());
+                u = SeguridadServices.Instancia.BuscarUsario("Id", this.idusuario.ToString());
                 txtCodUsuario.Text = u.Codigo_Usuario;
                 btnAnular.Enabled = false;
             }

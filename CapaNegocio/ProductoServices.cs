@@ -8,13 +8,13 @@ using CapaAccesoDatos;
 
 namespace CapaNegocio
 {
-    public class negProducto
+    public class ProductoServices
     {
         #region singleton
-        private static readonly negProducto _intancia = new negProducto();
-        public static negProducto Instancia
+        private static readonly ProductoServices _intancia = new ProductoServices();
+        public static ProductoServices Instancia
         {
-            get { return negProducto._intancia; }
+            get { return ProductoServices._intancia; }
         }
         #endregion singleton
 

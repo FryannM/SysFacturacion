@@ -25,7 +25,7 @@ namespace CapaPresentacion
         {
             cboDirSucursal.ValueMember = "Id_Suc";
             cboDirSucursal.DisplayMember = "Direccion_Suc";
-            cboDirSucursal.DataSource = negSeguridad.Instancia.ListarSucursal();
+            cboDirSucursal.DataSource = SeguridadServices.Instancia.ListarSucursal();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
