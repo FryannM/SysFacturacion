@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaNegocio;
 using Entidades;
-using CapaNegocio;
+using System;
+using System.Collections.Generic;
 namespace CapaPresentacion
 {
     public class LocalBD
@@ -18,13 +15,14 @@ namespace CapaPresentacion
         #endregion singleton
 
         #region metodos
-        int Iidcliente = 0, idClienteNV=0;
+        int Iidcliente = 0, idClienteNV = 0;
         int IdProd = 0;
         int intento = 0;
         // logica para comprbra que formulario invoco al frmbusqueda
-        int invocador=0; // 1: frmboleta, 2: frmnotaventa, 3: frmfactura
+        int invocador = 0; // 1: frmboleta, 2: frmnotaventa, 3: frmfactura
         private int _idsucrusal;
-        public int IdSucursal {
+        public int IdSucursal
+        {
             get { return _idsucrusal; }
             set { _idsucrusal = value; }
         }
@@ -33,7 +31,8 @@ namespace CapaPresentacion
         List<entProducto> detBoleta = new List<entProducto>();
         List<entProducto> detNotaVenta = new List<entProducto>();
 
-        public int Invocar(int getset,int frm) {
+        public int Invocar(int getset, int frm)
+        {
             try
             {
                 if (getset == 1) invocador = frm;
@@ -41,7 +40,8 @@ namespace CapaPresentacion
             catch (Exception)
             {
                 throw;
-            }return invocador;
+            }
+            return invocador;
         }
 
         public int ReturnIntento(int getset, int intent)
@@ -113,36 +113,50 @@ namespace CapaPresentacion
             }
         }
 
+
+
+
         public List<entProducto> ReturnDetVenta(int getset, int idprod, int cantidad)
         {
             try
             {
                 if (getset == 1)
                 {
-                    if (cantidad > 1)
+                    if (cantidad > 0)
                     {
+                        var cantidadproductpo = ProductoServices.Instancia.BuscarProducto(idprod);
+
+                        if (cantidadproductpo.Stock_Prod < 5)
+                        {
+                            throw new ApplicationException("Este Producto  Solo quedan " + cantidadproductpo.Stock_Prod + "  de Este Producto");
+                        }
                         for (int i = 0; i < detBoleta.Count; i++)
                         {
                             if (detBoleta[i].Id_Prod == idprod)
                             {
                                 detBoleta[i].Cantidad_ = cantidad;
+
                                 break;
                             }
                         }
-                    }
-                    else
-                    {
+                        //}
+                        //else
+                        //{
 
-                        for (int i = 0; i < detBoleta.Count; i++)
-                        {
-                            if (detBoleta[i].Id_Prod == idprod)
-                            {
-                                throw new ApplicationException("Este producto ya fue agreado");  
-                            }
-                        }
-                        entProducto pr = ProductoServices.Instancia.BuscarProducto(idprod);
-                        pr.Cantidad_ = cantidad;
-                        detBoleta.Add(pr);
+                        //    for (int i = 0; i < detBoleta.Count; i++)
+                        //    {
+                        //        if (detBoleta[i].Id_Prod == idprod)
+                        //        {
+                        //            //throw new ApplicationException("Este producto ya fue agreado");
+                        //            //ProductoServices.Instancia
+                        //        }
+                        //    }
+                        entProducto producto = ProductoServices.Instancia.BuscarProducto(idprod);
+                        producto.Cantidad_ = cantidad;
+                        detBoleta.Add(producto);
+
+
+
                     }
                 }
                 return detBoleta;

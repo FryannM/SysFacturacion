@@ -461,11 +461,17 @@ namespace CapaPresentacion
 
            
             var result = new entDetalleVenta();
+            var lista = new List<entDetalleVenta>();
             foreach (DataGridViewRow row in dgvDetalleBoleta.Rows)
             {
 
                 result.Id_Prod_Det = Convert.ToInt32(row.Cells[0].Value);
                 result.Cantidad_Det = Convert.ToInt32(row.Cells[2].Value);
+
+
+
+
+
                 
                  
                 
