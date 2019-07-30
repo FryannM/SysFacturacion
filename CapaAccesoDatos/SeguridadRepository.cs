@@ -118,7 +118,7 @@ namespace CapaAccesoDatos
         {
             SqlCommand cmd = null;
             SqlDataReader dr = null;
-            entNivelAcceso na = null;
+            entNivelAcceso entNivelAcceso = null;
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
@@ -129,8 +129,8 @@ namespace CapaAccesoDatos
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                     na = new entNivelAcceso();
-                    na.Descripcion_NivelAcc = dr["Descripcion_NivelAcc"].ToString();
+                    entNivelAcceso = new entNivelAcceso();
+                    entNivelAcceso.Descripcion_NivelAcc = dr["Descripcion_NivelAcc"].ToString();
                 }
             }
             catch (Exception)
@@ -139,7 +139,7 @@ namespace CapaAccesoDatos
                 throw;
             }
             finally { cmd.Connection.Close(); }
-            return na;
+            return entNivelAcceso;
         }
 
         public List<entNivelAcceso> ListarNivelAcceso() {
@@ -234,7 +234,7 @@ namespace CapaAccesoDatos
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally { cmd.Connection.Close(); }
             return u;

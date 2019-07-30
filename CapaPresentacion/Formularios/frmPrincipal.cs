@@ -329,5 +329,10 @@ namespace CapaPresentacion
                 throw;
             }
         }
+
+        private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

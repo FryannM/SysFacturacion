@@ -23,7 +23,7 @@ namespace CapaNegocio
             try
             {
                 List<entCliente> Lista = null;
-                Lista = datCliente.Intancia.BuscarClienteAvanzada(Nomm_cli);
+                Lista = ClienteRepository.Intancia.BuscarClienteAvanzada(Nomm_cli);
                 if (Lista == null) throw new ApplicationException("Ocurrio un problema en la busqueda");
                 return Lista;
             }
@@ -38,7 +38,7 @@ namespace CapaNegocio
             try
             {
                 entCliente c = null;
-                c = datCliente.Intancia.BuscarCliente(id_cli,nro_Doc);
+                c = ClienteRepository.Intancia.BuscarCliente(id_cli,nro_Doc);
                 if (c == null) throw new ApplicationException("No se encontro registro en la BD");
                 return c;
             }
@@ -53,7 +53,7 @@ namespace CapaNegocio
         {
             try
             {
-                List<entCliente> Lista = datCliente.Intancia.ListarCliente();
+                List<entCliente> Lista = ClienteRepository.Intancia.ListarCliente();
                 if (Lista.Count <= 0) throw new ApplicationException("Lista de clientes vacia");
                 else if (Lista == null) throw new ApplicationException("Error al cargar lista de clientes");
                 return Lista;
@@ -85,7 +85,7 @@ namespace CapaNegocio
                 cadXml += "tipoedicion='" +tipoedicion + "'/>";
                 
                 cadXml = "<root>" + cadXml + "</root>";
-                int result = datCliente.Intancia.MantenimientoCliente(cadXml);
+                int result = ClienteRepository.Intancia.MantenimientoCliente(cadXml);
                 if (result <= 0) throw new ApplicationException("Ocurrio un error al registrar");
                 return result;
             }
@@ -99,7 +99,7 @@ namespace CapaNegocio
         public List<entTipoDocumento> ListarTipDoc() {
             try
             {
-                List<entTipoDocumento> Lista = datCliente.Intancia.ListarTipDoc();
+                List<entTipoDocumento> Lista = ClienteRepository.Intancia.ListarTipDoc();
                 if (Lista.Count <= 0) throw new ApplicationException("Lista tipo documento vacia");
                 else if (Lista == null) throw new ApplicationException("Error al cargar lista tipo documento");
                 return Lista;
