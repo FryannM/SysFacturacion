@@ -42,10 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-    <Compile Include="datCliente.cs" />
-    <Compile Include="datProducto.cs" />
-    <Compile Include="datSeguridad.cs" />
-    <Compile Include="datVenta.cs" />
+    <Compile Include="ClienteRepository.cs" />
+    <Compile Include="ProductoRepository.cs" />
+    <Compile Include="SeguridadRepository.cs" />
+    <Compile Include="VentaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\Configuration\ConfigurationManager.cs" />
   </ItemGroup>

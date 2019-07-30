@@ -10,13 +10,13 @@ using System.Data.SqlClient;
 
 namespace CapaAccesoDatos
 {
-    public class datProducto
+    public class ProductoRepository
     {
         #region singleton
-        private static readonly datProducto _intancia = new datProducto();
-        public static datProducto Instancia
+        private static readonly ProductoRepository _intancia = new ProductoRepository();
+        public static ProductoRepository Instancia
         {
-            get { return datProducto._intancia; }
+            get { return ProductoRepository._intancia; }
         }
         #endregion singleton
 

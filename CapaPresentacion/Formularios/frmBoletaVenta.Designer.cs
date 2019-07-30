@@ -118,7 +118,7 @@
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.Teal;
+            this.label6.BackColor = System.Drawing.Color.MediumBlue;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
             this.label6.Location = new System.Drawing.Point(2, 34);

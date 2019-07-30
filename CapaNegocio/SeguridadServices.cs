@@ -37,7 +37,7 @@ namespace CapaNegocio
                 cadXml += "tipoedicion='" + tipoedicion + "'/>";
 
                 cadXml = "<root>" + cadXml + "</root>";
-                int result = datSeguridad.Instancia.MantenimientoUsuario(cadXml);
+                int result = SeguridadRepository.Instancia.MantenimientoUsuario(cadXml);
                 if (result == 0) throw new ApplicationException("Ocurrio un error al registrar, intentelo nuevamente");
 
                 return result;
@@ -57,7 +57,7 @@ namespace CapaNegocio
                     throw new ApplicationException("Seleccione el campo de busqueda");
                 }
                 entUsuario u = null;
-                u = datSeguridad.Instancia.BuscarUusario(por, valor);
+                u = SeguridadRepository.Instancia.BuscarUusario(por, valor);
                 if (u == null) {
                     throw new ApplicationException("No se encontraron registros");
                 }
@@ -73,7 +73,7 @@ namespace CapaNegocio
         public entSucursal MostrarCodSuc( Int32 idScu) {
             try
             {
-                return datSeguridad.Instancia.MostrarCodSuc(idScu);
+                return SeguridadRepository.Instancia.MostrarCodSuc(idScu);
             }
             catch (Exception)
             {
@@ -86,7 +86,7 @@ namespace CapaNegocio
         {
             try
             {
-                return datSeguridad.Instancia.ListarNivelAccesoDesc(idnivel);
+                return SeguridadRepository.Instancia.ListarNivelAccesoDesc(idnivel);
             }
             catch (Exception)
             {
@@ -99,7 +99,7 @@ namespace CapaNegocio
         {
             try
             {
-                return datSeguridad.Instancia.ListarNivelAcceso();
+                return SeguridadRepository.Instancia.ListarNivelAcceso();
             }
             catch (Exception)
             {
@@ -111,7 +111,7 @@ namespace CapaNegocio
         public List<entSucursal> ListarSucursal() {
             try
             {
-                return datSeguridad.Instancia.ListarSucursal();
+                return SeguridadRepository.Instancia.ListarSucursal();
             }
             catch (Exception)
             {
@@ -127,7 +127,7 @@ namespace CapaNegocio
                 if (usuario == "") throw new ApplicationException("Ingrese un usuario");
                 if (password == "") throw new ApplicationException("Ingrese una contraseña");
                 entUsuario u = null;
-                u = datSeguridad.Instancia.VerificarAcceso(usuario, password);
+                u = SeguridadRepository.Instancia.VerificarAcceso(usuario, password);
                 if (u == null)
                 {
                     throw new ApplicationException("Usuario ó password invalido");

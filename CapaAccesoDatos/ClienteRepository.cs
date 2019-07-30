@@ -8,12 +8,12 @@ using System.Data.SqlClient;
 using System.Data;
 namespace CapaAccesoDatos
 {
-    public class datCliente
+    public class ClienteRepository
     {
         #region singleton
-        private static readonly datCliente _intancia = new datCliente();
-        public static datCliente Intancia {
-            get { return datCliente._intancia; }
+        private static readonly ClienteRepository _intancia = new ClienteRepository();
+        public static ClienteRepository Intancia {
+            get { return ClienteRepository._intancia; }
         }
         #endregion singleton
 

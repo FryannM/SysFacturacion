@@ -55,6 +55,7 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +67,8 @@
             this.ventasToolStripMenuItem,
             this.consultasToolStripMenuItem,
             this.reportesToolStripMenuItem,
-            this.acercaDeToolStripMenuItem});
+            this.acercaDeToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(822, 44);
@@ -95,7 +97,7 @@
             this.tsmSeguridad.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmSeguridad.Image = global::CapaPresentacion.Properties.Resources.Security_1_24x24_32;
             this.tsmSeguridad.Name = "tsmSeguridad";
-            this.tsmSeguridad.Size = new System.Drawing.Size(180, 22);
+            this.tsmSeguridad.Size = new System.Drawing.Size(131, 22);
             this.tsmSeguridad.Text = "Seguridad";
             this.tsmSeguridad.Click += new System.EventHandler(this.seguridadToolStripMenuItem_Click);
             // 
@@ -104,7 +106,7 @@
             this.clientesToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientesToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.users_16x16_32;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -113,19 +115,19 @@
             this.productosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productosToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.producto_16x16;
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(128, 6);
             // 
             // tsmSalir
             // 
             this.tsmSalir.Name = "tsmSalir";
-            this.tsmSalir.Size = new System.Drawing.Size(180, 22);
+            this.tsmSalir.Size = new System.Drawing.Size(131, 22);
             this.tsmSalir.Text = "Salir";
             this.tsmSalir.Click += new System.EventHandler(this.tsmSalir_Click);
             // 
@@ -153,14 +155,14 @@
             this.ventasToolStripMenuItem1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ventasToolStripMenuItem1.Image = global::CapaPresentacion.Properties.Resources.Shopping_cart_24x24;
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.ventasToolStripMenuItem1.Text = "Ventas";
             // 
             // boletaToolStripMenuItem
             // 
             this.boletaToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boletaToolStripMenuItem.Name = "boletaToolStripMenuItem";
-            this.boletaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.boletaToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.boletaToolStripMenuItem.Text = "Venta Producto";
             this.boletaToolStripMenuItem.Click += new System.EventHandler(this.boletaToolStripMenuItem_Click);
             // 
@@ -197,7 +199,7 @@
             // 
             this.tsmRegmovimientos.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmRegmovimientos.Name = "tsmRegmovimientos";
-            this.tsmRegmovimientos.Size = new System.Drawing.Size(180, 22);
+            this.tsmRegmovimientos.Size = new System.Drawing.Size(172, 22);
             this.tsmRegmovimientos.Text = "Reg. Movimientos";
             // 
             // tsmordencompra
@@ -206,7 +208,7 @@
             this.genOrdenDeCompraToolStripMenuItem});
             this.tsmordencompra.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmordencompra.Name = "tsmordencompra";
-            this.tsmordencompra.Size = new System.Drawing.Size(180, 22);
+            this.tsmordencompra.Size = new System.Drawing.Size(172, 22);
             this.tsmordencompra.Text = "Orden de compra";
             // 
             // genOrdenDeCompraToolStripMenuItem
@@ -259,14 +261,14 @@
             // 
             this.tsmreporteventas.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmreporteventas.Name = "tsmreporteventas";
-            this.tsmreporteventas.Size = new System.Drawing.Size(180, 22);
+            this.tsmreporteventas.Size = new System.Drawing.Size(145, 22);
             this.tsmreporteventas.Text = "R. Ventas";
             // 
             // tsmreporteproductos
             // 
             this.tsmreporteproductos.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmreporteproductos.Name = "tsmreporteproductos";
-            this.tsmreporteproductos.Size = new System.Drawing.Size(180, 22);
+            this.tsmreporteproductos.Size = new System.Drawing.Size(145, 22);
             this.tsmreporteproductos.Text = "R. Productos";
             // 
             // acercaDeToolStripMenuItem
@@ -298,6 +300,13 @@
             this.lblUsuario.Size = new System.Drawing.Size(822, 29);
             this.lblUsuario.TabIndex = 2;
             this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 40);
+            this.salirToolStripMenuItem.Text = "Sali&r";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
             // 
             // frmPrincipal
             // 
@@ -350,5 +359,6 @@
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tsmSalir;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }

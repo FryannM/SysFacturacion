@@ -36,7 +36,7 @@ namespace CapaPresentacion
                 dgvHistorialVentas.Columns[2].Width = 60;
                 dgvHistorialVentas.Columns[5].Width = 60;
                 dgvHistorialVentas.Columns[6].Width = 58;
-                dgvHistorialVentas.Columns[7].Width = 40;
+                dgvHistorialVentas.Columns[7].Width = 10;
                 dgvHistorialVentas.Columns[8].Width = 70;
                 dgvHistorialVentas.Columns[9].Width = 70;
                 dgvHistorialVentas.Columns[9].DefaultCellStyle.BackColor = Color.LawnGreen;

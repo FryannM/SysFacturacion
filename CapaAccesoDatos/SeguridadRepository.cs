@@ -9,12 +9,12 @@ using System.Data;
 using Entidades;
 namespace CapaAccesoDatos
 {
-    public class datSeguridad{
+    public class SeguridadRepository{
 
         #region singleton
-        private static readonly datSeguridad _instancia = new datSeguridad();
-        public static datSeguridad Instancia{
-            get { return datSeguridad._instancia; }
+        private static readonly SeguridadRepository _instancia = new SeguridadRepository();
+        public static SeguridadRepository Instancia {
+            get { return SeguridadRepository._instancia; }
         }
         #endregion singleton
 
@@ -32,7 +32,7 @@ namespace CapaAccesoDatos
 
                 SqlParameter p = new SqlParameter("@retorno", DbType.Int32);
                 p.Direction = ParameterDirection.ReturnValue;
-                cmd.Parameters.Add(p);
+                    cmd.Parameters.Add(p);
                 cn.Open();
                 var result =  cmd.ExecuteNonQuery();
                 return result;
@@ -118,7 +118,7 @@ namespace CapaAccesoDatos
         {
             SqlCommand cmd = null;
             SqlDataReader dr = null;
-            entNivelAcceso na = null;
+            entNivelAcceso entNivelAcceso = null;
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
@@ -129,8 +129,8 @@ namespace CapaAccesoDatos
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                     na = new entNivelAcceso();
-                    na.Descripcion_NivelAcc = dr["Descripcion_NivelAcc"].ToString();
+                    entNivelAcceso = new entNivelAcceso();
+                    entNivelAcceso.Descripcion_NivelAcc = dr["Descripcion_NivelAcc"].ToString();
                 }
             }
             catch (Exception)
@@ -139,7 +139,7 @@ namespace CapaAccesoDatos
                 throw;
             }
             finally { cmd.Connection.Close(); }
-            return na;
+            return entNivelAcceso;
         }
 
         public List<entNivelAcceso> ListarNivelAcceso() {
@@ -234,7 +234,7 @@ namespace CapaAccesoDatos
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally { cmd.Connection.Close(); }
             return u;
