@@ -30,7 +30,7 @@ namespace CapaPresentacion
                 dgvHistorialVentas.Columns.Add("ColumnHora", "Hora");
                 dgvHistorialVentas.Columns.Add("ColumnIgv", "Igv");
                 dgvHistorialVentas.Columns.Add("ColumnTotal", "Total");
-                dgvHistorialVentas.Columns.Add("ColumnUtilidad", "Utilidades");
+                dgvHistorialVentas.Columns. Add("ColumnUtilidad", "Utilidades");
 
                 dgvHistorialVentas.Columns[0].Visible=false;
                 dgvHistorialVentas.Columns[2].Width = 60;
@@ -62,6 +62,7 @@ namespace CapaPresentacion
             {
                 // Variables de reporte
                 double descuento=0.0,total = 0, boleta = 0.0, factura = 0.0,notaventa=0.0,
+
                     efectivo=0.0,tarjetacred=0.0,contrareembolso=0.0,deposito=0.0,dolares=0.0,inversion=0.0,totalUtilidades = 0.0;
                 dgvHistorialVentas.Rows.Clear();
                 int idSucursal = (int)cboSucursal.SelectedValue;

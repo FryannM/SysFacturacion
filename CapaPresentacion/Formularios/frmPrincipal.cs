@@ -334,5 +334,10 @@ namespace CapaPresentacion
         {
             Application.Exit();
         }
+
+        private void tsmreporteventas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

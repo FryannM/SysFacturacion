@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBoletaVenta));
             this.txtCodUsuario = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCorrelativo = new System.Windows.Forms.Label();
@@ -63,7 +64,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnQuitarItem = new System.Windows.Forms.Button();
             this.btnAgregarItem = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnCrearFactura = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblNumItems = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -391,7 +392,7 @@
             this.panel1.Controls.Add(this.btnSalir);
             this.panel1.Controls.Add(this.btnQuitarItem);
             this.panel1.Controls.Add(this.btnAgregarItem);
-            this.panel1.Controls.Add(this.btnImprimir);
+            this.panel1.Controls.Add(this.btnCrearFactura);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.lblNumItems);
             this.panel1.Controls.Add(this.label10);
@@ -422,7 +423,7 @@
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(50, 40);
             this.btnAnular.TabIndex = 22;
-            this.toolTip1.SetToolTip(this.btnAnular, "Anular Boleta");
+            this.toolTip1.SetToolTip(this.btnAnular, "Anular Compra");
             this.btnAnular.UseVisualStyleBackColor = true;
             this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
@@ -464,15 +465,15 @@
             this.btnAgregarItem.UseVisualStyleBackColor = false;
             this.btnAgregarItem.Click += new System.EventHandler(this.btnAgregarItem_Click);
             // 
-            // btnImprimir
+            // btnCrearFactura
             // 
-            this.btnImprimir.Image = global::CapaPresentacion.Properties.Resources.printer;
-            this.btnImprimir.Location = new System.Drawing.Point(318, 244);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(50, 40);
-            this.btnImprimir.TabIndex = 18;
-            this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
-            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnCrearFactura.Image = ((System.Drawing.Image)(resources.GetObject("btnCrearFactura.Image")));
+            this.btnCrearFactura.Location = new System.Drawing.Point(318, 244);
+            this.btnCrearFactura.Name = "btnCrearFactura";
+            this.btnCrearFactura.Size = new System.Drawing.Size(50, 40);
+            this.btnCrearFactura.TabIndex = 18;
+            this.toolTip1.SetToolTip(this.btnCrearFactura, "Generar Factura");
+            this.btnCrearFactura.UseVisualStyleBackColor = true;
             // 
             // btnGuardar
             // 
@@ -487,7 +488,7 @@
             // 
             // lblNumItems
             // 
-            this.lblNumItems.BackColor = System.Drawing.Color.Teal;
+            this.lblNumItems.BackColor = System.Drawing.Color.Gainsboro;
             this.lblNumItems.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumItems.ForeColor = System.Drawing.SystemColors.Control;
             this.lblNumItems.Location = new System.Drawing.Point(15, 215);
@@ -597,7 +598,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnQuitarItem;
         private System.Windows.Forms.Button btnAgregarItem;
-        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnCrearFactura;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnBuscarXid;

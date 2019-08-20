@@ -34,7 +34,7 @@ namespace CapaPresentacion
             {
                 btnNuevo.Enabled = nuevo;
                 btnGuardar.Enabled = guardar;
-                btnImprimir.Enabled = imprimir;
+                btnCrearFactura.Enabled = imprimir;
                 btnQuitarItem.Enabled = quitaritem;
 
             }
@@ -541,7 +541,7 @@ namespace CapaPresentacion
                      
                       //var stock= negVenta.Equals.Resta
                     MessageBox.Show("Se guardo de manera correcta!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvDetalleBoleta.Enabled = false; ControlBotones(true, false, false, false); btnAgregarItem.Enabled = false; btnAnular.Enabled = true;
+                    dgvDetalleBoleta.Enabled = false; ControlBotones(true, false, false, false); btnAgregarItem.Enabled = false; btnAnular.Enabled = true; btnCrearFactura.Enabled = true;
                     ac.BloquearText(this.gbCliente, false); ac.BloquearText(this.panel1, false);
                     lblMontoEnletras.Text ="Son: "+ ac.enletras(txtTotal.Text).ToLower()+" Pesos";
                    
