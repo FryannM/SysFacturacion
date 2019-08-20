@@ -120,4 +120,27 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnImprimir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAMZSURBVFhHrZdJyI5RFMc/ZJ6VWYakjGEhJCRTNkKGJZKp
+        LCwQIjsy7ImSJZHIxrCRIcPCwrgwZMg8FhnK9Pu9vdd3Pd/zuK/3+/71q/eeuueee557zr1vTQXqC4/g
+        VwNzH/pBUsPgFXyDJ2Aw9eE5/IDr0B2SGg+f4SoMhN71ZA58gYvQAZKaCT/hBDTRUE9Ng+9wElpoSGkx
+        +M0OQCMN9dQC0N9BqGhDa8EJu0qjWrWHvBRnyaZ5BehvN1S0oR3ghPWlUa0ceyhTrIFYG0B/W0ujhIxw
+        PzhhiYZIOshbMIs7jhU2tK40SqgpHAcP4SwNkTpCrwpoA0FuaB8YwFINKTn5HHyFCRrKagxdIG/BLPFJ
+        99AdAQOYqyGlznAD3sFwDWW5e8soL+Uxd2EcBBnMGbAMp2hIqQ88Bp3ZkoO6wXnILpjlFoyEICvnCnyE
+        0RpSsg2/hZtgyoNMpW3UFIdyy6Y+2JpBUFe4A69hsIaUbMO2zQsQHyZTqXMdKhfpCWFx7Xk1bhbNjFk1
+        wKTiNmxFBE0GL5ZT0A4mwQMIqdfeCbIaCm/ATxNntFBFbXg2uNAxaAmWqAGFALTHGQsaC5/gEhh4UkVt
+        WOem0F0YWBgHgj2r6WAFmKHmGlIqasPVaj7o7xAkLyJ3UNSGq9Vy0N+e0iihf7XhamUmDWBbaZRQK7AN
+        W4aWY0NoOxjAXxeRO7WG40MkI8Cm8QFmlG2V0APyvq+fdC8YwDINQQPgMsRlJM/Ax6Of4EXZlkIfZyE0
+        qFgGdRgMYJ6GIFviU3AxF806zAZWhK9dg70HZiEry+40WIZTNQSFAB7CKMhLayVMBJ/vRQF4EZlpL6Ix
+        GoJCAE70lqtW/cEsFAVgc7oNXkRDNATFAeRNrFSepX8FEK528fcfGbnpNwh/V6uwQJEfq+o91LmI2kJ4
+        pazSUKXsG0V+fMJtBg/pUYjfCCUtBN99pnA1DIK8g5ZiExhA7MfvvRF82HgT+tesjox+J/gfMNR9KMH/
+        wYUtZ2vdQPTzsjz29G+BwluwNayEa+A/YSc1BLZy34GLIPNfsKbmNz7OM4Uve1ezAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

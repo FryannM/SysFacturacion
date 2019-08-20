@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBoletaVenta));
             this.txtCodUsuario = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCorrelativo = new System.Windows.Forms.Label();
@@ -422,7 +423,7 @@
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(50, 40);
             this.btnAnular.TabIndex = 22;
-            this.toolTip1.SetToolTip(this.btnAnular, "Anular Boleta");
+            this.toolTip1.SetToolTip(this.btnAnular, "Anular Compra");
             this.btnAnular.UseVisualStyleBackColor = true;
             this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
@@ -466,7 +467,7 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Image = global::CapaPresentacion.Properties.Resources.printer;
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.Location = new System.Drawing.Point(318, 244);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(50, 40);
