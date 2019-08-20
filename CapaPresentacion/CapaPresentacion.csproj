@@ -64,11 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccionesEnControles.cs" />
-    <Compile Include="Formularios\frmBoletaVenta.cs">
+    <Compile Include="Formularios\frmVentaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmBoletaVenta.Designer.cs">
-      <DependentUpon>frmBoletaVenta.cs</DependentUpon>
+    <Compile Include="Formularios\frmVentaProducto.Designer.cs">
+      <DependentUpon>frmVentaProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmCliente.cs">
       <SubType>Form</SubType>
@@ -151,8 +151,8 @@
     <Compile Include="LocalBD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\frmBoletaVenta.resx">
-      <DependentUpon>frmBoletaVenta.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmVentaProducto.resx">
+      <DependentUpon>frmVentaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
