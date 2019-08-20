@@ -54,8 +54,8 @@
             this.tsmreporteproductos = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblUsuario = new System.Windows.Forms.Label();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,9 +95,9 @@
             // tsmSeguridad
             // 
             this.tsmSeguridad.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmSeguridad.Image = global::CapaPresentacion.Properties.Resources.Security_1_24x24_32;
+            this.tsmSeguridad.Image = ((System.Drawing.Image)(resources.GetObject("tsmSeguridad.Image")));
             this.tsmSeguridad.Name = "tsmSeguridad";
-            this.tsmSeguridad.Size = new System.Drawing.Size(131, 22);
+            this.tsmSeguridad.Size = new System.Drawing.Size(180, 22);
             this.tsmSeguridad.Text = "Seguridad";
             this.tsmSeguridad.Click += new System.EventHandler(this.seguridadToolStripMenuItem_Click);
             // 
@@ -106,7 +106,7 @@
             this.clientesToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientesToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.users_16x16_32;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -115,19 +115,19 @@
             this.productosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productosToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.producto_16x16;
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(128, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // tsmSalir
             // 
             this.tsmSalir.Name = "tsmSalir";
-            this.tsmSalir.Size = new System.Drawing.Size(131, 22);
+            this.tsmSalir.Size = new System.Drawing.Size(180, 22);
             this.tsmSalir.Text = "Salir";
             this.tsmSalir.Click += new System.EventHandler(this.tsmSalir_Click);
             // 
@@ -153,16 +153,16 @@
             this.tsmnotacargo,
             this.tsmnotaventa});
             this.ventasToolStripMenuItem1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ventasToolStripMenuItem1.Image = global::CapaPresentacion.Properties.Resources.Shopping_cart_24x24;
+            this.ventasToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("ventasToolStripMenuItem1.Image")));
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.ventasToolStripMenuItem1.Text = "Ventas";
             // 
             // boletaToolStripMenuItem
             // 
             this.boletaToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boletaToolStripMenuItem.Name = "boletaToolStripMenuItem";
-            this.boletaToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.boletaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.boletaToolStripMenuItem.Text = "Venta Producto";
             this.boletaToolStripMenuItem.Click += new System.EventHandler(this.boletaToolStripMenuItem_Click);
             // 
@@ -170,28 +170,28 @@
             // 
             this.tsmfactura.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmfactura.Name = "tsmfactura";
-            this.tsmfactura.Size = new System.Drawing.Size(160, 22);
+            this.tsmfactura.Size = new System.Drawing.Size(180, 22);
             this.tsmfactura.Text = "Factura";
             // 
             // tsmnotacredito
             // 
             this.tsmnotacredito.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmnotacredito.Name = "tsmnotacredito";
-            this.tsmnotacredito.Size = new System.Drawing.Size(160, 22);
+            this.tsmnotacredito.Size = new System.Drawing.Size(180, 22);
             this.tsmnotacredito.Text = "Nota de Credito";
             // 
             // tsmnotacargo
             // 
             this.tsmnotacargo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmnotacargo.Name = "tsmnotacargo";
-            this.tsmnotacargo.Size = new System.Drawing.Size(160, 22);
+            this.tsmnotacargo.Size = new System.Drawing.Size(180, 22);
             this.tsmnotacargo.Text = "Nota de Cargo";
             // 
             // tsmnotaventa
             // 
             this.tsmnotaventa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmnotaventa.Name = "tsmnotaventa";
-            this.tsmnotaventa.Size = new System.Drawing.Size(160, 22);
+            this.tsmnotaventa.Size = new System.Drawing.Size(180, 22);
             this.tsmnotaventa.Text = "Nota de venta";
             this.tsmnotaventa.Click += new System.EventHandler(this.notaDeVentaToolStripMenuItem_Click);
             // 
@@ -199,7 +199,7 @@
             // 
             this.tsmRegmovimientos.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmRegmovimientos.Name = "tsmRegmovimientos";
-            this.tsmRegmovimientos.Size = new System.Drawing.Size(172, 22);
+            this.tsmRegmovimientos.Size = new System.Drawing.Size(180, 22);
             this.tsmRegmovimientos.Text = "Reg. Movimientos";
             // 
             // tsmordencompra
@@ -208,7 +208,7 @@
             this.genOrdenDeCompraToolStripMenuItem});
             this.tsmordencompra.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmordencompra.Name = "tsmordencompra";
-            this.tsmordencompra.Size = new System.Drawing.Size(172, 22);
+            this.tsmordencompra.Size = new System.Drawing.Size(180, 22);
             this.tsmordencompra.Text = "Orden de compra";
             // 
             // genOrdenDeCompraToolStripMenuItem
@@ -224,7 +224,7 @@
             this.tsmConsultaVenta});
             this.consultasToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultasToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.consultasToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.Pie_Diagram_32x32_32;
+            this.consultasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultasToolStripMenuItem.Image")));
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(92, 40);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -233,7 +233,7 @@
             // 
             this.tsmConsultaProd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmConsultaProd.Name = "tsmConsultaProd";
-            this.tsmConsultaProd.Size = new System.Drawing.Size(130, 22);
+            this.tsmConsultaProd.Size = new System.Drawing.Size(180, 22);
             this.tsmConsultaProd.Text = "Productos";
             this.tsmConsultaProd.Click += new System.EventHandler(this.productosToolStripMenuItem1_Click);
             // 
@@ -241,7 +241,7 @@
             // 
             this.tsmConsultaVenta.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmConsultaVenta.Name = "tsmConsultaVenta";
-            this.tsmConsultaVenta.Size = new System.Drawing.Size(130, 22);
+            this.tsmConsultaVenta.Size = new System.Drawing.Size(180, 22);
             this.tsmConsultaVenta.Text = "Ventas";
             this.tsmConsultaVenta.Click += new System.EventHandler(this.ventasToolStripMenuItem2_Click);
             // 
@@ -261,15 +261,16 @@
             // 
             this.tsmreporteventas.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmreporteventas.Name = "tsmreporteventas";
-            this.tsmreporteventas.Size = new System.Drawing.Size(145, 22);
-            this.tsmreporteventas.Text = "R. Ventas";
+            this.tsmreporteventas.Size = new System.Drawing.Size(180, 22);
+            this.tsmreporteventas.Text = "Reporte de Ventas";
+            this.tsmreporteventas.Click += new System.EventHandler(this.tsmreporteventas_Click);
             // 
             // tsmreporteproductos
             // 
             this.tsmreporteproductos.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmreporteproductos.Name = "tsmreporteproductos";
-            this.tsmreporteproductos.Size = new System.Drawing.Size(145, 22);
-            this.tsmreporteproductos.Text = "R. Productos";
+            this.tsmreporteproductos.Size = new System.Drawing.Size(180, 22);
+            this.tsmreporteproductos.Text = "Reporte  Productos";
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -286,9 +287,17 @@
             // 
             this.acercaDeToolStripMenuItem1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acercaDeToolStripMenuItem1.Name = "acercaDeToolStripMenuItem1";
-            this.acercaDeToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.acercaDeToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.acercaDeToolStripMenuItem1.Text = "Acerca de";
             this.acercaDeToolStripMenuItem1.Click += new System.EventHandler(this.acercaDeToolStripMenuItem1_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("salirToolStripMenuItem.Image")));
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(57, 40);
+            this.salirToolStripMenuItem.Text = "Sali&r";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
             // 
             // lblUsuario
             // 
@@ -300,13 +309,6 @@
             this.lblUsuario.Size = new System.Drawing.Size(822, 29);
             this.lblUsuario.TabIndex = 2;
             this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 40);
-            this.salirToolStripMenuItem.Text = "Sali&r";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
             // 
             // frmPrincipal
             // 
@@ -321,7 +323,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ventana Principal";
+            this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);

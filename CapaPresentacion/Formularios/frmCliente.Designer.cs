@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.chkBuscar = new System.Windows.Forms.CheckBox();
@@ -55,7 +56,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.Teal;
+            this.label1.BackColor = System.Drawing.Color.MediumBlue;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 12);
@@ -104,9 +105,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(14, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 15);
+            this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 28;
-            this.label2.Text = "Nombre/Raz. Social:";
+            this.label2.Text = "Nombre";
             // 
             // btnBuscar
             // 
@@ -162,7 +163,7 @@
             // btnVender
             // 
             this.btnVender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVender.Image = global::CapaPresentacion.Properties.Resources.Shopping_cart_32x32_32;
+            this.btnVender.Image = ((System.Drawing.Image)(resources.GetObject("btnVender.Image")));
             this.btnVender.Location = new System.Drawing.Point(823, 141);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(82, 46);
@@ -174,7 +175,7 @@
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnActualizar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnActualizar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizar.Location = new System.Drawing.Point(910, 140);
@@ -261,6 +262,7 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1140, 600);
             this.Name = "frmCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
