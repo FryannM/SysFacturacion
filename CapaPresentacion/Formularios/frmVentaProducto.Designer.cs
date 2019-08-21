@@ -474,6 +474,7 @@
             this.btnCrearFactura.TabIndex = 18;
             this.toolTip1.SetToolTip(this.btnCrearFactura, "Generar Factura");
             this.btnCrearFactura.UseVisualStyleBackColor = true;
+            this.btnCrearFactura.Click += new System.EventHandler(this.btnCrearFactura_Click);
             // 
             // btnGuardar
             // 

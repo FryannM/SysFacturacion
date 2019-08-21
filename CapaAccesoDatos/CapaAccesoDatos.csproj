@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="ClienteRepository.cs" />
+    <Compile Include="FacturaRepository.cs" />
     <Compile Include="ProductoRepository.cs" />
     <Compile Include="SeguridadRepository.cs" />
     <Compile Include="VentaRepository.cs" />

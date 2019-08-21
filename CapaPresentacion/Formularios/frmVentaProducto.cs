@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CapaNegocio;
+﻿using CapaNegocio;
 using Entidades;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 namespace CapaPresentacion
 {
     public partial class frmBoletaVenta : Form
@@ -129,7 +124,7 @@ namespace CapaPresentacion
                 {
                     if (row.Cells[2].Value == null) row.Cells[2].Value = 0;
                     row.Cells[4].Value = (Convert.ToDouble((row.Cells[2].Value)) * Convert.ToDouble((row.Cells[3].Value)));
-                  //  subtotal += Convert.ToDouble(row.Cells[4].Value);
+                    //  subtotal += Convert.ToDouble(row.Cells[4].Value);
 
                     if (row.Cells[3].Value == null) row.Cells[3].Value = 0;
                     row.Cells[4].Value = (Convert.ToDouble((row.Cells[2].Value)) * Convert.ToDouble((row.Cells[3].Value)));
@@ -138,9 +133,11 @@ namespace CapaPresentacion
                     // txtSubtotal.Text = subtotal.ToString(".00");
                     txtTotal.Text = subtotal.ToString("0.00");
                 }
-                if (dgvDetalleBoleta.Rows.Count == 0) {
+                if (dgvDetalleBoleta.Rows.Count == 0)
+                {
                     //txtSubtotal.Text = "0"; txtDescuento.Text = "0";
-                    txtTotal.Text = "0"; }
+                    txtTotal.Text = "0";
+                }
             }
             catch (Exception)
             {
@@ -171,12 +168,12 @@ namespace CapaPresentacion
                 throw;
             }
         }
-      
+
         private void SoloNumCeldaGrid()
         {
             try
             {
-                int i = 0; decimal j=0 ; String valor,valor_01; Boolean res = false;
+                int i = 0; decimal j = 0; String valor, valor_01; Boolean res = false;
                 foreach (DataGridViewRow row in dgvDetalleBoleta.Rows)
                 {
                     if (row.Cells[2].Value == null) row.Cells[2].Value = 0;
@@ -188,14 +185,15 @@ namespace CapaPresentacion
                         row.Cells[2].Value = i;
                     }
                     if (row.Cells[3].Value == null) row.Cells[3].Value = 0;
-                    valor_01 = row.Cells[3].Value.ToString().Replace(".",",");
+                    valor_01 = row.Cells[3].Value.ToString().Replace(".", ",");
                     //  res_01 = SoloDecimales(valor);
                     if (!Decimal.TryParse(valor_01, out j))
                     {
                         MessageBox.Show("Intentó ingresar un valor no numérico en 'Precio', valor se reducira a cero", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         row.Cells[3].Value = 0;
                     }
-                    else {
+                    else
+                    {
                         row.Cells[3].Value = valor_01;
 
                     }
@@ -229,7 +227,7 @@ namespace CapaPresentacion
         {
             try
             {
-                
+
                 CrearGrid();
                 ContarItems();
                 ac.LlenarCboTipDoc(this.gbCliente);
@@ -244,7 +242,7 @@ namespace CapaPresentacion
                 btnAnular.Enabled = false;
                 int idCliente = LocalBD.Instancia.ReturnIdCliente(0, 0);
                 if (idCliente != 0) { btnBuscarCliente.Enabled = false; btnBuscarXid.Enabled = true; }
-            
+
             }
             catch (Exception ex)
             {
@@ -442,7 +440,7 @@ namespace CapaPresentacion
             }
         }
 
-       
+
 
         private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -456,10 +454,10 @@ namespace CapaPresentacion
             }
         }
 
-         private entDetalleVenta Stock()
+        private entDetalleVenta Stock()
         {
 
-           
+
             var result = new entDetalleVenta();
             var lista = new List<entDetalleVenta>();
             foreach (DataGridViewRow row in dgvDetalleBoleta.Rows)
@@ -468,16 +466,9 @@ namespace CapaPresentacion
                 result.Id_Prod_Det = Convert.ToInt32(row.Cells[0].Value);
                 result.Cantidad_Det = Convert.ToInt32(row.Cells[2].Value);
 
-
-
-
-
-                
-                 
-                
             }
 
-             VentaServices.Intancia.RestarStock(result.Cantidad_Det,result.Id_Prod_Det);
+            VentaServices.Intancia.RestarStock(result.Cantidad_Det, result.Id_Prod_Det);
 
             return result;
 
@@ -487,41 +478,41 @@ namespace CapaPresentacion
         {
             try
             {
-                
+
                 DialogResult r = MessageBox.Show("¿Desea Registrar la Venta?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
                 {
                     SoloNumCeldaGrid();
                     EscribirNuevoMonto();
                     ActualizarMontosDgv();
-                    entVenta v = new entVenta();
+                    entVenta venta = new entVenta();
 
-                    entCliente c = new entCliente();
-                    c.Id_Cliente = LocalBD.Instancia.ReturnIdCliente(0, 0);
-                    v.cliente = c;
+                    entCliente cliente = new entCliente();
+                    cliente.Id_Cliente = LocalBD.Instancia.ReturnIdCliente(0, 0);
+                    venta.cliente = cliente;
 
-                    entUsuario u = new entUsuario();
-                    u = us;
-                    v.usuario = u;
+                    entUsuario usuario = new entUsuario();
+                    usuario = us;
+                    venta.usuario = usuario;
 
-                    entSucursal s = new entSucursal();
-                    s.Id_Suc = LocalBD.Instancia.IdSucursal;
-                    v.sucursal = s;
+                    entSucursal sucursal = new entSucursal();
+                    sucursal.Id_Suc = LocalBD.Instancia.IdSucursal;
+                    venta.sucursal = sucursal;
 
-                    entTipComprobante tc = new entTipComprobante();
-                    tc.Id_TipCom = 1;
-                    v.tipocomprobante = tc;
+                    entTipComprobante tipocomprobante = new entTipComprobante();
+                    tipocomprobante.Id_TipCom = 1;
+                    venta.tipocomprobante = tipocomprobante;
 
-                    entMoneda m = new entMoneda();
-                    m.Id_Moneda = Convert.ToInt32(CboMoneda.SelectedValue);
-                    v.moneda = m;
+                    entMoneda moneda = new entMoneda();
+                    moneda.Id_Moneda = Convert.ToInt32(CboMoneda.SelectedValue);
+                    venta.moneda = moneda;
 
-                    entTipoPago tp = new entTipoPago();
-                    tp.Id_TipPago =Convert.ToInt32(cboTipoPago.SelectedValue);
-                    v.tipopago = tp;
+                    entTipoPago tipoPago = new entTipoPago();
+                    tipoPago.Id_TipPago = Convert.ToInt32(cboTipoPago.SelectedValue);
+                    venta.tipopago = tipoPago;
 
-                    v.Igv_Venta = 0;
-                    v.Descuento_Venta = 0.0;
+                    venta.Igv_Venta = 0;
+                    venta.Descuento_Venta = 0.0;
 
                     List<entDetalleVenta> Detalle = new List<entDetalleVenta>();
                     foreach (DataGridViewRow row in dgvDetalleBoleta.Rows)
@@ -532,19 +523,19 @@ namespace CapaPresentacion
                         dt.Cantidad_Det = Convert.ToInt32(row.Cells[2].Value);
                         Detalle.Add(dt);
                     }
-                    v.detalleventa = Detalle;
-                    v.Desc_Venta = "";
+                    venta.detalleventa = Detalle;
+                    venta.Desc_Venta = "";
                     Stock();
                     CargarSerie_correlativo();
-                    int result = VentaServices.Intancia.GuardarVenta(v, 1, serie.Numero_Serie);
+                    int result = VentaServices.Intancia.GuardarVenta(venta, 1, serie.Numero_Serie);
 
-                     
-                      //var stock= negVenta.Equals.Resta
+
+                    //var stock= negVenta.Equals.Resta
                     MessageBox.Show("Se guardo de manera correcta!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvDetalleBoleta.Enabled = false; ControlBotones(true, false, false, false); btnAgregarItem.Enabled = false; btnAnular.Enabled = true; btnCrearFactura.Enabled = true;
                     ac.BloquearText(this.gbCliente, false); ac.BloquearText(this.panel1, false);
-                    lblMontoEnletras.Text ="Son: "+ ac.enletras(txtTotal.Text).ToLower()+" Pesos";
-                   
+                    lblMontoEnletras.Text = "Son: " + ac.enletras(txtTotal.Text).ToLower() + " Pesos";
+
                 }
             }
             catch (ApplicationException ae) { MessageBox.Show(ae.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
@@ -559,6 +550,50 @@ namespace CapaPresentacion
 
         }
 
+        private void btnCrearFactura_Click(object sender, EventArgs e)
+        {
+            var modelo = new entFactura();
+
+            String num_doc = txtNumDoc.Text;
+            bool estado = true;
+            bool anulado = false;
+            var cliente = ClienteServices.Intancia.BuscarCliente(0, num_doc);
+            modelo.TipoPago = Convert.ToInt32(cboTipoPago.SelectedValue);
+            modelo.estado = estado;
+            modelo.anulada = anulado;
+
+            modelo.clienteID = cliente.Id_Cliente;
+             
+
+
+            try
+            {
+                 if (modelo != null )
+                {
+                var result = FacturaServices.Instancia.RegistrarFactura(modelo);
+                MessageBox.Show("Factura Generada Correctamente", "Mensaje", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    btnCrearFactura.Enabled = false;
+
+                }
+                else
+                {
+
+                    MessageBox.Show("Error al general la Factura", "Mensaje",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    btnCrearFactura.Enabled = false;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         private void btnAnular_Click(object sender, EventArgs e)
         {
             try
@@ -566,7 +601,7 @@ namespace CapaPresentacion
                 DialogResult dr = MessageBox.Show("¿Desea anular boleta?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
-                    int result = VentaServices.Intancia.AnularComprobante(ser, corr,1);
+                    int result = VentaServices.Intancia.AnularComprobante(ser, corr, 1);
                     MessageBox.Show("Boleta anulada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnAnular.Enabled = false;
                 }
