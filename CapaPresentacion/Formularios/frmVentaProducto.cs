@@ -491,9 +491,9 @@ namespace CapaPresentacion
                     cliente.Id_Cliente = LocalBD.Instancia.ReturnIdCliente(0, 0);
                     venta.cliente = cliente;
 
-                    entUsuario u = new entUsuario();
-                    u = us;
-                    venta.usuario = u;
+                    entUsuario usuario = new entUsuario();
+                    usuario = us;
+                    venta.usuario = usuario;
 
                     entSucursal sucursal = new entSucursal();
                     sucursal.Id_Suc = LocalBD.Instancia.IdSucursal;
@@ -503,13 +503,13 @@ namespace CapaPresentacion
                     tipocomprobante.Id_TipCom = 1;
                     venta.tipocomprobante = tipocomprobante;
 
-                    entMoneda m = new entMoneda();
-                    m.Id_Moneda = Convert.ToInt32(CboMoneda.SelectedValue);
-                    venta.moneda = m;
+                    entMoneda moneda = new entMoneda();
+                    moneda.Id_Moneda = Convert.ToInt32(CboMoneda.SelectedValue);
+                    venta.moneda = moneda;
 
-                    entTipoPago tp = new entTipoPago();
-                    tp.Id_TipPago = Convert.ToInt32(cboTipoPago.SelectedValue);
-                    venta.tipopago = tp;
+                    entTipoPago tipoPago = new entTipoPago();
+                    tipoPago.Id_TipPago = Convert.ToInt32(cboTipoPago.SelectedValue);
+                    venta.tipopago = tipoPago;
 
                     venta.Igv_Venta = 0;
                     venta.Descuento_Venta = 0.0;
@@ -558,8 +558,7 @@ namespace CapaPresentacion
             bool estado = true;
             bool anulado = false;
             var cliente = ClienteServices.Intancia.BuscarCliente(0, num_doc);
-            cboTipDoc.SelectedValue = cliente.tipodocumento.Id_TipDoc;
-          //  txtNumDoc.Text =   modelo.Cliente.NumeroDoc_Cliente.Trim();
+            modelo.TipoPago = Convert.ToInt32(cboTipoPago.SelectedValue);
             modelo.estado = estado;
             modelo.anulada = anulado;
 
@@ -569,14 +568,29 @@ namespace CapaPresentacion
 
             try
             {
-
+                 if (modelo != null )
+                {
                 var result = FacturaServices.Instancia.RegistrarFactura(modelo);
+                MessageBox.Show("Factura Generada Correctamente", "Mensaje", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    btnCrearFactura.Enabled = false;
+
+                }
+                else
+                {
+
+                    MessageBox.Show("Error al general la Factura", "Mensaje",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    btnCrearFactura.Enabled = false;
+
+                }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
 

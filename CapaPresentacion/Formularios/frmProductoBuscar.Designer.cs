@@ -139,14 +139,14 @@
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(80, 40);
             this.btnVender.TabIndex = 48;
-            this.toolTip1.SetToolTip(this.btnVender, "Seleccionar para venta");
+            this.toolTip1.SetToolTip(this.btnVender, "Cargar Para la venta");
             this.btnVender.UseVisualStyleBackColor = true;
             this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
             // btnCargar
             // 
             this.btnCargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCargar.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnCargar.BackColor = System.Drawing.Color.Silver;
             this.btnCargar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCargar.Location = new System.Drawing.Point(822, 119);
