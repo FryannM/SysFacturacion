@@ -356,7 +356,9 @@ namespace CapaPresentacion
 
                 entProducto p = new entProducto();
                 int tipoedicion = 1;
-                if (txtIdP.Text != "") { tipoedicion = 2; p.Id_Prod = Convert.ToInt32(txtIdP.Text); }
+                if (txtIdP.Text != "") {
+                    tipoedicion = 2; p.Id_Prod = Convert.ToInt32(txtIdP.Text);
+                }
                 p.Nombre_Prod = txtNombre.Text;
                 p.Marca_Prod = txtMarca.Text;
                 if (txtPrecioCompra.Text == "") p.PrecioCompra_Prod = 0; else p.PrecioCompra_Prod = Convert.ToDouble(txtPrecioCompra.Text);
@@ -1169,8 +1171,12 @@ namespace CapaPresentacion
         {
             try
             {
-                if (!String.IsNullOrEmpty(txtIdMaterial.Text)) { /*editar*/ int i = ProductoServices.Instancia.EditarMaterial(Convert.ToInt32(txtIdMaterial.Text), txtNombreMaterial.Text); }
-                else { /*guardar*/int i = ProductoServices.Instancia.RegistrarMaterial(txtNombreMaterial.Text); }
+                if (!String.IsNullOrEmpty(txtIdMaterial.Text)) {
+                    /*editar*/ int i = ProductoServices.Instancia.EditarMaterial
+                        (Convert.ToInt32(txtIdMaterial.Text),
+                                   txtNombreMaterial.Text); }
+                else { 
+                    /*guardar*/int i = ProductoServices.Instancia.RegistrarMaterial(txtNombreMaterial.Text); }
            
                 ControlBotones("M",true, false, false, false, false, true);
                 txtNombreMaterial.Enabled = false;

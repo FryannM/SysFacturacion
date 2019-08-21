@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProducto));
             this.label1 = new System.Windows.Forms.Label();
             this.tbcPrincipal = new System.Windows.Forms.TabControl();
             this.tbcProducto = new System.Windows.Forms.TabPage();
@@ -153,7 +154,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.Teal;
+            this.label1.BackColor = System.Drawing.Color.MediumBlue;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 10);
@@ -364,7 +365,7 @@
             // txtPrecioVenta
             // 
             this.txtPrecioVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecioVenta.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.txtPrecioVenta.BackColor = System.Drawing.Color.Silver;
             this.txtPrecioVenta.Location = new System.Drawing.Point(608, 124);
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Size = new System.Drawing.Size(50, 21);
@@ -507,7 +508,7 @@
             // 
             // txtPrecioCompra
             // 
-            this.txtPrecioCompra.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.txtPrecioCompra.BackColor = System.Drawing.Color.Silver;
             this.txtPrecioCompra.Location = new System.Drawing.Point(234, 126);
             this.txtPrecioCompra.Name = "txtPrecioCompra";
             this.txtPrecioCompra.Size = new System.Drawing.Size(50, 21);
@@ -616,7 +617,7 @@
             // btnCargraPR
             // 
             this.btnCargraPR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCargraPR.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnCargraPR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnCargraPR.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCargraPR.Location = new System.Drawing.Point(708, 16);
             this.btnCargraPR.Name = "btnCargraPR";
@@ -889,7 +890,7 @@
             // btnCargarUM
             // 
             this.btnCargarUM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCargarUM.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnCargarUM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnCargarUM.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCargarUM.Location = new System.Drawing.Point(708, 16);
             this.btnCargarUM.Name = "btnCargarUM";
@@ -1090,7 +1091,7 @@
             // btnCargarC
             // 
             this.btnCargarC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCargarC.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnCargarC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnCargarC.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCargarC.Location = new System.Drawing.Point(708, 16);
             this.btnCargarC.Name = "btnCargarC";
@@ -1288,7 +1289,7 @@
             // btnCargarMaterial
             // 
             this.btnCargarMaterial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCargarMaterial.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnCargarMaterial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnCargarMaterial.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCargarMaterial.Location = new System.Drawing.Point(788, 51);
             this.btnCargarMaterial.Name = "btnCargarMaterial";
@@ -1440,6 +1441,7 @@
             this.ClientSize = new System.Drawing.Size(1124, 562);
             this.Controls.Add(this.tbcPrincipal);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1140, 600);
             this.Name = "frmProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

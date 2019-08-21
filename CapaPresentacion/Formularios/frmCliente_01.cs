@@ -72,7 +72,9 @@ namespace CapaPresentacion
                 entCliente c = new entCliente();
                 entTipoDocumento td = new entTipoDocumento();
                 int tipoedicion = 1;
-                if (txtIdCliente.Text != "0") { tipoedicion = 2; c.Id_Cliente = Convert.ToInt32(txtIdCliente.Text); }
+                if (txtIdCliente.Text != "0") {
+                    tipoedicion = 2; c.Id_Cliente = Convert.ToInt32(txtIdCliente.Text);
+                }
                 td.Id_TipDoc = Convert.ToInt32(cboTipDoc.SelectedValue);
                 c.tipodocumento = td;
                 c.NumeroDoc_Cliente = txtNumDoc.Text;
